@@ -17,11 +17,172 @@ $medium-small: 750px;
 $small: 475px;
 ///////////////////////////////////////
 
-.content-block-root-name
+#reviews-block
 {
-	// for any given block of content you're building, when possible please put all styles inside
-	// a wrapper with a class or id of the root element of that bit of markup, that way the compiled
-	// styles end up namespaced so they can't accidentally affect other parts of the website
+	background: $dark;
+	color: $cream;
 
-	
+	.reviews-block-inner 
+	{
+		max-width: 1020px;
+		margin: 0 auto;
+		padding: 60px 30px;
+	}
+
+	h2 
+	{
+		margin: 0 0 70px;
+		font-size: 40px;
+		font-weight: 600;	
+		line-height: normal;
+	}
+
+	.reviews-cont 
+	{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: end;
+		grid-gap: 60px;
+	}
+
+	.review-photo 
+	{
+		box-sizing: border-box;
+		margin-bottom: 26px;
+		width: 130px;
+		border: 4px solid $cream;
+		border-radius: 50%;
+		vertical-align: middle;
+	}
+
+	.review-stars-cont 
+	{
+		margin-bottom: 15px;
+	}
+
+	.review-star 
+	{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background: url('./newassets/icon-star-green-alt.svg') no-repeat center;
+		background-size: contain;
+		vertical-align: middle;
+
+		&:not(:last-of-type)
+		{
+			margin-right: 5px;
+		}
+	}
+
+	.review-title 
+	{
+		margin: 0 0 10px;
+		font-size: 27px;
+		font-weight: 600;
+		line-height: normal;
+	}
+
+	.review-description
+	{
+		margin: 0 0 20px;
+		font-size: 17px;
+		font-weight: 500;
+		line-height: 1.6;
+	}
+
+	.review-name 
+	{
+		margin: 0;
+		font-size: 15px;
+		font-weight: bold;
+		line-height: normal;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+	}
+
+	@media screen and (max-width: $medium) 
+	{
+		h2 
+		{
+			margin: 0 0 30px;
+			font-size: 30px;
+		}
+
+		.reviews-cont 
+		{
+			grid-gap: 24px;
+		}
+
+		.review-photo
+		{
+			margin-bottom: 15px;
+			width: 110px;
+		}
+		
+		.review-stars-cont 
+		{
+			margin-bottom: 10px;
+		}
+
+		.review-star 
+		{
+			width: 25px;
+			height: 25px;
+		}
+
+		.review-title 
+		{
+			margin: 0 0 5px;
+			font-size: 22px;
+		}
+
+		.review-description
+		{
+			margin: 0 0 15px;
+			font-size: 14px;
+			line-height: 1.5;
+		}
+
+		.review-name
+		{
+			font-size: 13px;
+		}
+	}
+
+	@media screen and (max-width: $medium-small) 
+	{
+		.reviews-block-inner
+		{
+			padding: 50px 30px;
+		}		
+
+		.reviews-cont 
+		{
+			width: 100%;
+			grid-template-columns: 1fr;
+			grid-gap: 35px;
+		}
+
+		.review 
+		{
+			border-bottom: 2px solid $cream;
+
+			&:nth-child(even) 
+			{
+				text-align: right;
+			}
+		}
+
+		.review-description 
+		{
+			max-width: 420px;
+			display: inline-block;
+		}
+
+		.review-name
+		{
+			margin: 0 0 15px;
+		}
+	}
 }
