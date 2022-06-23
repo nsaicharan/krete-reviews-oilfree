@@ -1,0 +1,31 @@
+
+.customers-menu-content-columns
+{
+	margin-top: 25px;
+	display: flex;
+	flex-direction: row;
+
+	.customers-menu-column
+	{
+		width: 250px;
+	}
+
+	.customers-content-column
+	{
+		flex: 1;
+		padding-left: 30px;
+	}
+
+	@media screen and (max-width: $medium)
+	{
+		flex-direction: column;
+		.customers-menu-column,
+		.customers-content-column,
+		{ flex:1; width:100%; }
+
+		.customers-content-column {
+			padding-left: 0;
+			padding-top: 25px;
+		}
+	}
+}

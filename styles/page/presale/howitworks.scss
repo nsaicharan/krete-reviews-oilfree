@@ -1,0 +1,215 @@
+&#how-it-works
+{
+	padding: 50px 0;
+	background: $dark;
+	color: $cream;
+	text-align: center;
+
+	.main-column
+	{
+		border: 2px solid $cream;
+		box-sizing: border-box;
+
+		.pre-h2
+		{
+			line-height: 1.35;
+			margin: 60px 0 20px;
+			font-size: 17px;
+			font-weight: 600;
+			letter-spacing: 4px;
+			text-transform: uppercase;
+		}
+
+		h2
+		{
+			color: $cream;
+			line-height: 1.375;
+			margin: 0 0 50px 0;
+			font-size: 40px;
+			font-weight: 600;
+			text-align: center;
+			letter-spacing: 0;
+		}
+
+		.step-list
+		{
+			display: flex;
+			margin-bottom: 60px;
+
+			.step
+			{
+				flex: 1;
+				text-align: center;
+				margin-right: 50px;
+				&:first-child { margin-left:100px; }
+				&:last-child { margin-right:100px; }
+
+				.graphic
+				{
+					height: 94px;
+					width: 94px;
+					display: inline-block;
+					margin-bottom: 25px;
+
+					img, svg
+					{
+						height: 100%;
+						width: auto;
+					}
+
+					.number {
+						position: absolute;
+						display: block;
+						width: 43px;
+						height: 43px;
+						background: $cream;
+						border-radius: 99px;
+						right: -15px;
+						top: -15px;
+						color: $dark;
+						text-align: center;
+						line-height: 44px;
+						font-weight: bold;
+						font-size: 20px;
+					}
+				}
+			}
+
+			.text
+			{
+				line-height: 1.6;
+				font-size: 17px;
+			}
+		}
+	}
+
+	// ----------------------------------------------------
+
+	@media screen and (max-width: $medium-large)
+	{
+		.main-column
+		{
+			.pre-h2
+			{
+				margin-top: 50px;
+				font-size: 16px;
+				letter-spacing: 3.5px;
+			}
+
+			.step-list
+			{
+				margin-bottom: 50px;
+
+				.step
+				{
+					&:first-child { margin-left:50px; }
+					&:last-child { margin-right:50px; }
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium)
+	{
+		.main-column
+		{
+			h2
+			{
+				margin: 0 0 50px 0;
+				font-size: 35px;
+			}
+
+			.step-list
+			{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.step
+				{
+					max-width: 400px;
+					margin: 30px 20px !important;
+					display: flex;
+					align-items: flex-start;
+
+					.graphic
+					{
+						margin-bottom: 0;
+						margin-right: 20px;
+					}
+
+					.text {
+						font-size: 15px;
+						text-align: left;
+						flex: 1;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium-small)
+	{
+		padding: 40px 0;
+
+		.main-column
+		{
+			.pre-h2
+			{
+				margin-top: 40px;
+				font-size: 15px;
+				letter-spacing: 3px;
+			}
+
+			h2
+			{
+				margin: 0 0 40px 0;
+				font-size: 27px;
+			}
+
+			.step-list
+			{
+				margin-bottom: 40px;
+
+				.step
+				{
+					margin: 20px 20px !important;
+					&:last-child { margin-bottom: 0 !important; }
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $small)
+	{
+		padding: 30px 0;
+
+		.main-column
+		{
+			.step-list
+			{
+				.step
+				{
+					.graphic
+					{
+						height: 75px;
+						width: 75px;
+
+						.number {
+							width: 35px;
+							height: 35px;
+							right: -12px;
+							top: -12px;
+							line-height: 36px;
+							font-size: 20px;
+						}
+					}
+
+					.text {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}

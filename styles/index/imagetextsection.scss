@@ -1,0 +1,171 @@
+
+// also utilized on about page
+
+.image-text-section
+{
+	padding: 80px 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	.image-area
+	{
+		padding-right: 35px;
+		flex-basis: 57%;
+
+		img
+		{
+			box-sizing: border-box;
+			border: $border-thickness solid white;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.text-area
+	{
+		flex-basis: 43%;
+		padding-left: 35px;
+		color: $dark;
+
+		h6
+		{
+			font-size: 17px;
+			line-height: 1.353;
+			font-weight: bold;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			margin: 0;
+			margin-bottom: 40px;
+		}
+
+		h3
+		{
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 1.375;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+
+		p
+		{
+			font-size: 20px;
+			line-height: 1.5;
+			margin: 0;
+			margin-bottom: 40px;
+		}
+
+		.button
+		{
+			margin-bottom: 7px;
+		}
+	}
+
+	&.reversed
+	{
+		flex-direction: row-reverse;
+		.text-area {
+			padding-left: 0;
+			padding-right: 35px;
+		}
+		.image-area {
+			padding-right: 0;
+			padding-left: 35px;
+		}
+	}
+
+	&.dark
+	{
+		.image-area
+		{
+			img
+			{
+				border-color: transparent;
+			}
+		}
+
+		.text-area
+		{
+			color: white;
+		}
+	}
+
+	@media screen and (max-width: $medium)
+	{
+		padding: 60px 0;
+
+		.text-area
+		{
+			h6 { font-size:13px; }
+			h3 { font-size:30px; }
+			p { font-size:17px; }
+
+			p {
+				margin-bottom: 30px;
+			}
+		}
+
+		.image-area
+		{
+			img
+			{
+				border: $border-thickness2 solid white;
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium-small)
+	{
+		flex-direction: column !important;
+		align-items: stretch;
+		padding: 50px 0;
+
+		.text-area {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+		.image-area {
+			padding-right: 0 !important;
+			padding-left: 0 !important;
+			margin-bottom: 12px;
+		}
+
+		&.reversed {
+			.text-area {
+				text-align: right;
+			}
+			
+		}
+
+		&.dark
+		{
+			padding: 80px 0;
+
+			.image-area
+			{
+				margin-bottom: 40px;
+
+				img
+				{
+					border: 0;
+				}
+			}
+
+			.text-area
+			{
+				margin: 0 15px;
+				text-align: center;
+				h6 { margin-bottom:30px; }
+			}
+		}
+	}
+}
+
+.home-bottom-dark-section
+{
+	background-image: url('https://cdn.shopify.com/s/files/1/0338/0520/5563/t/3/assets/img-swirly-bg.jpg?1');
+	background-position: center bottom;
+	background-size: auto 255px;
+	background-repeat: no-repeat;
+}

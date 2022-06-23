@@ -1,0 +1,111 @@
+
+// TEMP: remove once friends11 modal gone
+
+#friends11-modal
+{
+	.container
+	{
+		width: 620px;
+		max-width: 95vw;
+
+		.subcont
+		{
+			text-align: center;
+			padding: 40px;
+			@media screen and (max-width: $medium-small) { padding:20px; }
+
+			h2
+			{
+				text-align: center;
+				padding: 0;
+				margin-bottom: 40px;
+				@media screen and (max-width: $medium-small) { font-size:32px; }
+				@media screen and (max-width: $small) { font-size:26px; }
+			}
+
+			h5
+			{
+				margin-top: -34px;
+				margin-bottom: 40px;
+				font-weight: 500;
+				font-size: 22px;
+				line-height: 1.3em;
+			}
+
+			h6
+			{
+				margin-top: -34px;
+				margin-bottom: 40px;
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 1.3em;
+			}
+
+			p
+			{
+				margin-top: -30px;
+				margin-bottom: 36px;
+				line-height: 1.4em;
+			}
+
+			.coupon
+			{
+				background-color: #{$dark}33;
+				text-align: center;
+				padding: 22px;
+				margin: 0 30px;
+				@media screen and (max-width: $medium-small) { margin:0px; }
+
+				// dashed border effect
+				background-image: linear-gradient(to right, $cream 50%, transparent 50%), linear-gradient(to right, $cream 50%, transparent 50%), linear-gradient(to bottom, $cream 50%, transparent 50%), linear-gradient(to bottom, $cream 50%, transparent 50%);
+				background-position: left top, left bottom, left top, right top;
+				background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+				background-size: 20px 3px, 20px 3px, 3px 20px, 3px 20px;
+
+				h3
+				{
+					font-size: 40px;
+					font-weight: 700;
+					text-transform: uppercase;
+					margin: 0;
+					padding: 0;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+
+					@media screen and (max-width: $medium) { font-size:32px; }
+					@media screen and (max-width: $medium-small) { font-size:29px; }
+					@media screen and (max-width: $small) { font-size:26px; }
+				}
+
+				p
+				{
+					font-size: 18px;
+					@media screen and (max-width: $small) { font-size:16px; }
+					font-weight: 400;
+					margin: 12px 0 3px;
+					&:empty { display:none; }
+				}
+			}
+
+			.footer
+			{
+				background-color: #{$dark}4D;
+				text-align: center;
+				font-weight: 500;
+				font-size: 16px;
+				@media screen and (max-width: $small) { font-size:15px; }
+				display: inline-block;
+				margin: 45px auto 10px;
+				padding: 22px 28px;
+				border-radius: 12px;
+				display: inline-flex;
+				flex-direction: row;
+				align-items: center;
+
+				svg { margin-right: 20px; margin-left: -5px; }
+				p { margin:0; }
+			}
+		}
+	}
+}

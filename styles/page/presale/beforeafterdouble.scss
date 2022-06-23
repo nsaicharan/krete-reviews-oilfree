@@ -1,0 +1,318 @@
+&#before-after-double
+{
+	$bef-aft-wide-width: 420px;
+	$bef-aft-wide-height: 480px;
+	$bef-aft-border-width: 20px;
+	padding: 60px 0;
+	background: $green;
+
+	.main-column
+	{
+		h2
+		{
+			color: $cream;
+			line-height: 1.375;
+			margin: 0 0 50px 0;
+			font-size: 40px;
+			font-weight: 600;
+			text-align: center;
+			letter-spacing: 0;
+		}
+
+		.tab-area
+		{
+			display: flex;
+			width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 40px;
+
+			.tab
+			{
+				flex: 1;
+				height: 50px;
+				line-height: 51px;
+				background: rgba($cream, 0.6);
+				font-size: 15px;
+				font-weight: bold;
+				letter-spacing: 5px;
+				text-align: center;
+				color: $dark;
+				cursor: pointer;
+				text-transform: uppercase;
+				transition: background 0.2s;
+				white-space: nowrap;
+
+				&::hover { background:rgba($cream, 0.8); }
+				&.selected { cursor:default; pointer-events:none; background:rgba($cream, 1); }
+			}
+		}
+
+		.content-area
+		{
+			display: flex;
+
+			.before-after-cont,
+			.before-after-spacer
+			{
+				position: absolute;
+
+				border: $bef-aft-border-width solid $cream;
+				width: $bef-aft-wide-width;
+				height: $bef-aft-wide-height;
+
+				.before-after
+				{
+					height: $bef-aft-wide-height;
+
+					.before, .after {
+						height: $bef-aft-wide-height;
+					}
+				}
+
+				&:not(.showing) {
+					pointer-events: none;
+					opacity: 0;
+				}
+			}
+
+			.before-after-spacer
+			{
+				position: relative !important;
+				border-color: blue;
+				background: red;
+				pointer-events: none;
+				opacity: 0.5;
+			}
+
+			.legal-text
+			{
+				position: absolute;
+				font-size: 13px;
+				bottom: -25px - $bef-aft-border-width;
+				left: 0 - $bef-aft-border-width;
+				color: $cream;
+			}
+
+			.text-cont
+			{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				color: $cream;
+				flex: 1;
+				margin-left: 50px;
+
+				h3 {
+					line-height: 1.375;
+					font-size: 40px;
+					font-weight: 600;
+					margin-bottom: 20px;
+				}
+
+				p {
+					line-height: 1.4;
+					font-size: 20px;
+					margin-bottom: 50px;
+					&:last-child { margin-bottom:0; }
+				}
+
+				&:not(.showing) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	// ------------------------------------------
+
+	@media screen and (max-width: $medium)
+	{
+		.main-column
+		{
+			h2
+			{
+				margin: 0 0 40px 0;
+				font-size: 35px;
+			}
+
+			.tab-area
+			{
+				//margin-left: 0;
+				//width: auto;
+				//display: inline-flex;
+				margin-bottom: 0px;
+				width: $bef-aft-wide-width+$bef-aft-border-width+$bef-aft-border-width;
+
+				.tab {
+					padding: 0 40px;
+					letter-spacing: 3px;
+					font-size: 14px;
+				}
+			}
+
+			.content-area
+			{
+				display: block;
+
+				.before-after-cont,
+				.before-after-spacer
+				{
+					margin-bottom: 50px;
+				}
+				// container and spacer need different methods of centering
+				.before-after-cont {
+					right: 50%;
+					transform: translateX(50%);
+				}
+				.before-after-spacer {
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+				.text-cont
+				{
+					padding-left: $bef-aft-border-width;
+					padding-right: $bef-aft-border-width;
+					margin-left: 0px;
+
+					h3 {
+						font-size: 36px;
+					}
+					p {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium-small)
+	{
+		padding: 50px 0;
+
+		.main-column
+		{
+			h2
+			{
+				margin: 0 0 40px 0;
+				font-size: 27px;
+			}
+
+			.content-area
+			{
+				.text-cont
+				{
+					h3 {
+						font-size: 30px;
+					}
+					p {
+						font-size: 17px;
+					}
+				}
+			}
+		}
+	}
+
+	// the width at which the before/after fills the browser width
+	@media screen and (max-width: $bef-aft-wide-width+$bef-aft-border-width+$bef-aft-border-width+40px)
+	{
+		.main-column
+		{
+			.tab-area
+			{
+				margin-left: 0;
+				width: auto;
+				display: inline-flex;
+
+				.tab {
+					padding: 0 30px;
+				}
+			}
+
+			.content-area
+			{
+				.before-after-cont,
+				.before-after-spacer
+				{
+					width: calc(100% - 40px);
+					height: $bef-aft-wide-height * 0.9;
+
+					.before-after
+					{
+						height: $bef-aft-wide-height * 0.9;
+						.before, .after {
+							height: $bef-aft-wide-height * 0.9;
+						}
+					}
+				}
+
+				.legal-text {
+					left: 0;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 420px)
+	{
+		.main-column
+		{
+			.content-area
+			{
+				.before-after-cont,
+				.before-after-spacer
+				{
+					height: $bef-aft-wide-height * 0.8;
+
+					.before-after
+					{
+						height: $bef-aft-wide-height * 0.8;
+						.before, .after {
+							height: $bef-aft-wide-height * 0.8;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 390px)
+	{
+		.main-column
+		{
+			.content-area
+			{
+				.before-after-cont,
+				.before-after-spacer
+				{
+					height: $bef-aft-wide-height * 0.7;
+
+					.before-after
+					{
+						height: $bef-aft-wide-height * 0.7;
+						.before, .after {
+							height: $bef-aft-wide-height * 0.7;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $small)
+	{
+		padding: 50px 0;
+
+		.main-column
+		{
+			.tab-area
+			{
+				.tab {
+					padding: 0 25px;
+					font-size: 13px;
+				}
+			}
+		}
+	}
+}

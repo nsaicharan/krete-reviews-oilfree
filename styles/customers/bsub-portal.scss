@@ -1,0 +1,307 @@
+/*
+#0f343d $dark
+#567d68 $green
+#f5f4ec $cream
+*/
+
+/* change general font color for normal text */
+.bsub-customer-portal #customer-portal-root p
+{
+    color: #777;
+}
+
+/* generic link styles (ones intended as buttons changed later down) */
+.bsub-customer-portal #customer-portal-root .details-section a,
+.bsub-customer-portal #customer-portal-root .bsub-data-table__body a.bsub-link
+{
+    color: #567d68;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.bsub-customer-portal #customer-portal-root .details-section a:hover
+{
+    color: #0f343d;
+}
+
+/* when phone number is missing fill it in */
+.bsub-customer-portal #customer-portal-root .customer-info__item p:empty::before
+{
+    content: '----';
+}
+
+/* stop the vertical alignment of the image */
+.bsub-customer-portal #customer-portal-root .subscription-details
+{
+    align-items: normal;
+}
+
+/* kill off box containers they use */
+.bsub-customer-portal #customer-portal-root div.customer-info__section,
+.bsub-customer-portal #customer-portal-root div.active-subscription,
+.bsub-customer-portal #customer-portal-root div.active-subscription__details
+{
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* main h3 headers */
+.bsub-customer-portal #customer-portal-root h3
+{
+    color: #0f343d;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* message below the main "Account info" header */
+.bsub-customer-portal #customer-portal-root .customer-info__header-message
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* small headers for bits of data in the content areas */
+.bsub-customer-portal #customer-portal-root .highlighted-header
+{
+    color: #0f343d;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* title for a subscription in the list (e.g. Blah Blah #12342) */
+.bsub-customer-portal #customer-portal-root .details-section--header h3
+{
+    color: #0f343d;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* the links/buttons for editing */
+.bsub-customer-portal #customer-portal-root .stx-button,
+.bsub-customer-portal #customer-portal-root .text-button,
+.bsub-customer-portal #customer-portal-root .with-button__style-as-link
+{
+    color: #f5f4ec;
+    background: #567d68;
+    padding: 6px 15px !important;
+    border-radius: 5px;;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transition: background 0.2s;
+    align-self: flex-start; /* prevents full width when flex child */
+    margin: 5px 0;
+}
+.bsub-customer-portal #customer-portal-root .stx-button:hover,
+.bsub-customer-portal #customer-portal-root .text-button:hover,
+.bsub-customer-portal #customer-portal-root .with-button__style-as-link:hover
+{
+    background: #0f343d;
+}
+
+/* "Next order" info at the start of a subscription list item */
+.bsub-customer-portal #customer-portal-root .next-order-container
+{
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.5);
+    margin-top: 5px;
+}
+/* button fix in next order section */
+.bsub-customer-portal #customer-portal-root .next-order-container .with-button
+{
+    display: inline-block;
+    margin: 10px 0;
+}
+
+/* image of product beside a subscription in list */
+.bsub-customer-portal #customer-portal-root .line-item-image--single
+{
+    background: white;
+    margin-right: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.bsub-customer-portal #customer-portal-root .products-edit__subtotal-label
+{
+    font-size: 18px;
+    margin-bottom: 0;
+    top: 1px;
+    margin-right: 10px;
+}
+
+/* FIXME: this relies on the first .future-order item being the one for all */
+/* hides the "pause all future orders" section */
+.bsub-customer-portal #customer-portal-root .future-order:first-child,
+/* when success/fail confirm shows then it isn't first-child anymore so target first one after message */
+.bsub-customer-portal #customer-portal-root .stx-message + .future-order
+{
+    display: none;
+}
+
+/* a whole editing area for "updating" orders by date rage that doesn't explain what's being changed */
+.bsub-customer-portal #customer-portal-root .bsub__change-next-order-settings-container
+{
+    display: none;
+}
+
+/* make subtext under change payment button smaller */
+.bsub-customer-portal #customer-portal-root .bsub__payment-container__change-info p
+{
+    font-size: 12px;
+}
+
+/* opening drop down panels root */
+.bsub-customer-portal #customer-portal-root .panel
+{
+    border: 1px solid #ddd;
+    background: rgba(255,255,255,0.4);
+}
+
+/* cickable area / header of panel */
+.bsub-customer-portal #customer-portal-root .panel .panel--header
+{
+    background: transparent;
+}
+
+/* within the header the left section (title/arrow) */
+.bsub-customer-portal #customer-portal-root .panel .panel--header .bsub-flex__item
+{
+    display: flex;
+    align-items: center;
+}
+.bsub-customer-portal #customer-portal-root .panel .panel--header .bsub-flex__item .panel--header-icon
+{
+    margin: 0 10px;
+    top: -1px;
+}
+.bsub-customer-portal #customer-portal-root .panel .panel--header .bsub-flex__item .panel--header-icon.panel--header-icon__is-closed
+{
+    top: -10px;
+}
+
+/* an item in the list of upcoming orders */
+.bsub-customer-portal #customer-portal-root .future-order
+{
+    border-bottom: 1px solid #ccc;
+    padding: 30px 10px;
+}
+
+/* it's stupid to show the image in the future orders...it's the same item */
+.bsub-customer-portal #customer-portal-root .future-order .future-order-images-container
+{
+    display: none;
+}
+
+/* button for skip shipment in future orders */
+.bsub-customer-portal #customer-portal-root .future-order .with-button
+{
+    margin: 10px 0;
+    display: inline-block;
+}
+
+/* dismiss button for small alerts (e.g. the notice that shows after you skip an order) */
+.bsub-customer-portal #customer-portal-root .stx-message__dismiss-button
+{
+    top: 3px;
+    right: 6px;
+    padding: 6px 10px !important;
+    background: #567d68;
+    opacity: 1;
+    border-radius: 99px;
+}
+.bsub-customer-portal #customer-portal-root .stx-message__dismiss-button::before
+{
+    content: 'x';
+    display: block;
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: bold;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* ---------------------------------------- FORM FIELD --------------------------------------- */
+/* ------------------------------------------------------------------------------------------- */
+
+/* labels above fields */
+.bsub-customer-portal #customer-portal-root .stx-field__label
+{
+    display: inline-block;
+    margin: 6px 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* basic input elements */
+.bsub-customer-portal #customer-portal-root .stx-input
+{
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.8);
+    padding: 10px 5px;
+    box-shadow: none;
+}
+
+/* basic radio button elements */
+.bsub-customer-portal #customer-portal-root .stx-field--with-radio-field
+{
+    padding-left: 0;
+    margin: 10px 0;
+}
+.bsub-customer-portal #customer-portal-root .stx-radio-field__label
+{
+    margin-left: 20px;
+    top: -1px;
+}
+
+/* basic checkbox elements */
+.bsub-customer-portal #customer-portal-root .stx-checkbox-field__field
+{
+    margin: 10px 0;
+    padding-left: 0;
+}
+.bsub-customer-portal #customer-portal-root .stx-checkbox-field__checkbox
+{
+    top: -1px;
+}
+.bsub-customer-portal #customer-portal-root .stx-checkbox-field__label
+{
+    margin-left: 30px;
+}
+
+/* basic select box elements */
+.bsub-customer-portal #customer-portal-root .stx-select
+{
+    box-shadow: none;
+    border: 1px solid #ddd;
+    padding: 2px 4px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.8);
+}
+.bsub-customer-portal #customer-portal-root .stx-select__select-element
+{
+    background-color: transparent;
+    background-position: right 8px top 11.5px,0 0;
+}
+
+/* spacing down the button line (whole line) of various editing forms */
+.bsub-customer-portal #customer-portal-root .customer-info-edit__footer-container,
+.bsub-customer-portal #customer-portal-root .bsub__change-next-order-settings-container__btns
+{
+    margin-top: 15px;
+}
+
+/* target the primary button in editing forms (i.e. save button) to give it margin from other btns */
+.bsub-customer-portal #customer-portal-root .stx-button--primary
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}

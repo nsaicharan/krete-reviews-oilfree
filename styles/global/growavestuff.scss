@@ -1,0 +1,193 @@
+
+// the html and body adds more precedence for these styles
+html
+{
+	body
+	{
+		// kills off the social login and the recaptcha stuff that we don't want
+		.ssw-social-login-widget,
+		.grecaptcha-badge
+		{
+			display: none !important;
+		}
+
+		// large (defined here as default) / non-inverted (defined here as default)
+		.growave-stuff
+		{
+			.ssw-stars,
+			.ssw-starsd
+			{
+				display: flex !important; // important to undo growave css
+				flex-direction: row;
+				padding: 0;
+
+				.ssw-icon-star,
+				.ssw-icon-star-half-alt,
+				.ssw-icon-star-empty,
+				{
+					&:not(:first-child) { margin-left: 7px; }
+					display: block;
+					width: 20px;
+					height: 20px;
+					background-position: center center;
+					background-size: 100% 100%;
+					background-repeat: no-repeat;
+
+					// undo growave stuff
+					&:before { display:none !important; }
+					path { display:none !important; }
+				}
+
+				.ssw-icon-star
+				{
+					background-image: url('icon-star-green.svg');
+				}
+
+				.ssw-icon-star-half-alt
+				{
+					background-image: url('icon-halfstar-green.svg');
+				}
+
+				.ssw-icon-star-empty
+				{
+					background-image: url('icon-nostar-green.svg');
+				}
+
+				.ssw-review-count
+				{
+					font-size: 15px;
+					margin-left: 12px;
+					color: $green;
+					line-height: 21px;
+					position: relative;
+					top: 1px;
+				}
+			}
+		}
+
+		// modifies to remove the count from the star rating area
+		.growave-stuff.only-stars
+		{
+			.ssw-stars,
+			.ssw-starsd
+			{
+				.ssw-review-count
+				{
+					display: none;
+				}
+			}
+		}
+
+		// modifies to make it use small stars area
+		.growave-stuff.small
+		{
+			.ssw-stars,
+			.ssw-starsd
+			{
+				.ssw-icon-star,
+				.ssw-icon-star-half-alt,
+				.ssw-icon-star-empty,
+				{
+					&:not(:first-child) { margin-left: 6px; }
+					width: 13px;
+					height: 13px;
+				}
+			}
+		}
+
+		// modifies to invert the stars area colors
+		.growave-stuff.inverted
+		{
+			.ssw-stars,
+			.ssw-starsd
+			{
+				.ssw-icon-star
+				{
+					background-image: url('icon-star-cream.svg');
+				}
+
+				.ssw-icon-star-half-alt
+				{
+					background-image: url('icon-halfstar-cream.svg');
+				}
+
+				.ssw-icon-star-empty
+				{
+					background-image: url('icon-nostar-cream.svg');
+				}
+
+				.ssw-review-count
+				{
+					color: $cream;
+				}
+			}
+		}
+
+		// modifies to darken the stars area colors
+		.growave-stuff.dark
+		{
+			.ssw-stars,
+			.ssw-starsd
+			{
+				.ssw-icon-star
+				{
+					background-image: url('icon-star-dark.svg');
+				}
+
+				.ssw-icon-star-half-alt
+				{
+					background-image: url('icon-halfstar-dark.svg');
+				}
+
+				.ssw-icon-star-empty
+				{
+					background-image: url('icon-nostar-dark.svg');
+				}
+
+				.ssw-review-count
+				{
+					color: $dark;
+				}
+			}
+		}
+
+		// modifies to invert the stars area colors for mobile sizes only (<= medium)
+		.growave-stuff.mobile-inverted
+		{
+			.ssw-stars,
+			.ssw-starsd
+			{
+				@media screen and (max-width: $medium)
+				{
+					.ssw-icon-star
+					{
+						background-image: url('icon-star-cream.svg');
+					}
+
+					.ssw-icon-star-half-alt
+					{
+						background-image: url('icon-halfstar-cream.svg');
+					}
+
+					.ssw-icon-star-empty
+					{
+						background-image: url('icon-nostar-cream.svg');
+					}
+
+					.ssw-review-count
+					{
+						color: $cream;
+					}
+				}
+			}
+		}
+
+		// fix because growave introduced that stupid "gw-hide" class to the top-stars
+		.growave-stuff.top-stars #ssw-avg-rate-profile-html.gw-hide
+		{
+			display: block;
+			font-family: inherit; // because they're fucking with the font too
+		}
+	}
+}
+

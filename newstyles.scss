@@ -1,0 +1,27 @@
+//////////// GLOBALS //////////////////
+// colors
+$lightcream: #fcfbf8;
+$cream: #f5f4ec;
+$green: #567d68;
+$dark: #0f343d;
+// hover colors
+$whitehover: #EBE9D8;
+$creamhover: #E1DEC6;
+$greenhover: #416167;
+$darkhover: #39533E;
+// media query breakpoints
+$medium-large: 1320px;
+$medium: 1000px;
+$medium-small-plus: 875px;
+$medium-small: 750px;
+$small: 475px;
+///////////////////////////////////////
+
+.content-block-root-name
+{
+	// for any given block of content you're building, when possible please put all styles inside
+	// a wrapper with a class or id of the root element of that bit of markup, that way the compiled
+	// styles end up namespaced so they can't accidentally affect other parts of the website
+
+	
+}

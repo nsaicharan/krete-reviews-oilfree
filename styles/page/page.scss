@@ -1,0 +1,73 @@
+
+// generic page, like extra pages
+
+.generic-page
+{
+	margin-bottom: 50px;
+	
+	h1
+	{
+		margin: 50px 0 25px 0;
+		font-size: 30px;
+		font-weight: 600;
+		line-height: 41px;
+		color: $dark;
+		text-align: center;
+	}
+
+	h2
+	{
+		margin: 50px 0 25px 0;
+		font-size: 25px;
+		font-weight: 600;
+		line-height: 1.2em;
+		color: $dark;
+	}
+
+	h3
+	{
+		margin: 50px 0 25px 0;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1.2em;
+		color: $dark;
+	}
+
+	h4
+	{
+		margin: 50px 0 25px 0;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.2em;
+		color: $dark;
+	}
+
+	p
+	{
+		line-height: 1.4em;
+		color: $dark;
+		font-size: 16px;
+		font-weight: 400;
+		margin: 0 0 25px 0;
+	}
+
+	.cta-section
+	{
+		margin: 10px 0 125px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		h3
+		{
+			font-size: 34px;
+			font-weight: 600;
+			color: $dark;
+
+			@media screen and (max-width: $medium-small)
+			{
+				font-size: 28px;
+			}
+		}
+	}
+}

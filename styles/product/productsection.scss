@@ -1,0 +1,529 @@
+
+@use "sass:color";
+
+.product-section
+{
+	margin-top: 100px;
+
+	// on desktops with short viewports we need it tighter to top
+	@media screen and (min-width: $medium-large) and (max-height:800px) {
+		margin-top:50px;
+		.main-column .product-right .product-area {
+			top: 165px !important; // 50 off from the 215 set in the normal style
+		}
+	}
+	
+
+	.main-column
+	{
+		display: flex;
+		flex-direction: row;
+
+		.product-left
+		{
+			width: 50%;
+		}
+
+		.product-right
+		{
+			@media screen and (max-width: $medium)
+			{
+				// prevents sticky script from working on mobiles
+				margin-top: 0 !important;
+			}
+
+			transition: margin-top 0.15s;
+			width: calc(50% - 100px);
+			padding-left: 100px;
+			color: $dark;
+
+			.product-area
+			{
+				position: sticky;
+				-webkit-position: sticky;
+				top: 215px;
+				padding-bottom: 30px;
+				@media screen and (max-width: $medium)
+				{
+					position: relative;
+					-webkit-position: relative;
+					top: auto;
+					padding-bottom: 0;
+				}
+				&.no-sticky
+				{
+					position: relative;
+					-webkit-position: relative;
+					top: auto;
+					padding-bottom: 0;
+				}
+
+				.top-stars
+				{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 20px;
+					margin-bottom: 20px;
+				}
+
+				.description
+				{
+					margin-bottom: 20px;
+					@media screen and (max-width: $medium) { margin-bottom: 43px; }
+
+					p
+					{
+						margin: 0;
+						margin-bottom: 10px;
+						font-size: 17px;
+						font-weight: normal;
+						line-height: 27px;
+						letter-spacing: normal;
+						text-align: center;
+					}
+				}
+
+				.sale-notification
+				{
+					border: 2px dashed $green;
+					color: $green;
+					font-size: 15px;
+					font-weight: bold;
+					padding: 7px 12px;
+					line-height: 1.3em;
+					border-radius: 4px;
+					margin-bottom: 30px;
+					margin-left: auto;
+					margin-right: auto;
+					text-align: center;
+					max-width: 580px;
+				}
+
+				form
+				{
+					margin-bottom: 20px;
+
+					.variant-line
+					{
+						display: grid;
+						grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); // works for 2 column layouts that stack after the given pixel size, default
+						grid-gap: 10px;
+						margin-bottom: 25px;
+
+						&.single-col
+						{
+							display: block;
+							width: 100%;
+						}
+
+						// can be added to do double column instead, just goes to single at $small
+						&.double-col
+						{
+							grid-template-columns: repeat(2, minmax(0, 1fr));
+							@media screen and (max-width: $small) { grid-template-columns: 1fr; }
+						}
+
+						// can be added to do triple column instead, just goes to single at $small
+						&.triple-col
+						{
+							grid-template-columns: repeat(3, minmax(0, 1fr));
+							@media screen and (max-width: $small) { grid-template-columns: 1fr; }
+						}
+
+						.variant-button
+						{
+							box-sizing: border-box;
+							height: 63px;
+							border: 2px solid $green;
+							outline: 2px solid transparent;
+							//display: flex;
+							display: none; // off until JS progressive enhancement
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							transition: outline-color 0.2s, border-color 0.2s, background 0.2s, color 0.2s;
+							cursor: pointer;
+							color: $green;
+							user-select: none;
+
+							&:not(.selected):hover
+							{
+								border-color: $greenhover;
+								background: #{$creamhover}66;
+								color: $dark;
+							}
+
+							&.selected
+							{
+								color: $dark;
+								pointer-events: none;
+								border-color: $dark;
+								outline-color: $dark;
+								background-image: linear-gradient(105deg, #f5f4ec, color.adjust($dark, $alpha:-0.85));
+							}
+
+							p
+							{
+								margin: 4px 0;
+								line-height: 1em;
+								font-weight: 500;
+								font-size: 14px;
+								&.title { font-size:16px; font-weight:700; }
+								color: inherit;
+							}
+
+							del
+							{
+								opacity: 0.75;
+								margin-right: 3px;
+							}
+
+							&.has-sale-callout { @media screen and (max-width: $small) { margin-top: 13px; } }
+							.sale-callout
+							{
+								color: $cream;
+								background: $green;
+								border: 3px solid #4E725B;
+								font-size: 12px;
+								font-weight: bold;
+								line-height: 1em;
+								padding: 3px 7px;
+								border-radius: 2px;
+								position: absolute;
+								top: -18px;
+								z-index: 1;
+								white-space: nowrap;
+								pointer-events: none;
+							}
+
+							&.disabled
+							{
+								opacity: 0.6;
+								pointer-events: none;
+							}
+						}
+					}
+
+					.subscribe-teaser
+					{
+						padding: 15px 25px;
+						margin-top: -9px;
+						margin-bottom: 15px;
+						background: $green;
+						border-radius: 6px;
+						color: $cream;
+						font-size: 15px;
+						font-weight: 500;
+
+						ul { margin:0; padding:0; padding-left:20px; }
+						ul li
+						{
+							margin: 10px 0;
+						}
+
+						@media screen and (max-width: $medium-small) { font-size: 14px; }
+					}
+
+					.no-variant-price
+					{
+						box-sizing: border-box;
+						height: 60px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: $green;
+						width: 100%;
+						color: $dark;
+						border: 2px solid $dark;
+						background-image: linear-gradient(105deg, #f5f4ec, color.adjust($dark, $alpha:-0.85));
+
+						p
+						{
+							margin: 4px 0;
+							line-height: 1em;
+							font-weight: 500;
+							font-size: 18px;
+							font-weight: 600;
+							color: inherit;
+						}
+					}
+
+					.quantity-submit-line
+					{
+						display: grid;
+						grid-template-columns: 100px 1fr;
+						grid-gap: 10px;
+						height: 50px;
+						margin-bottom: 25px;
+
+						#quantity
+						{
+							box-sizing: border-box;
+							height: 100%;
+							border: 2px solid $green;
+							background: $cream;
+							width: 100px;
+							text-align: center;
+							font-size: 18px;
+							font-weight: 400;
+						}
+
+						button
+						{
+							height: 100%;
+							border: 0;
+							border-radius: 0;
+							transition: background-color 0.2s;
+							background-color: $dark;
+							&:hover { background-color:$darkhover; }
+							color: $cream;
+							font-size: 15px;
+							font-weight: bold;
+							letter-spacing: 4px;
+							text-transform: uppercase;
+							cursor: pointer;
+						}
+					}
+				}
+
+				.after-add-text
+				{
+					font-size: 16px;
+					color: $dark;
+					text-align: center;
+					line-height: 1.2em;
+					font-weight: 600;
+					margin-bottom: 20px;
+				}
+
+				.countdown-timer
+				{
+					position: absolute;
+					width: 292px;
+					height: 34px;
+					border: 1px solid #4E725B;
+					background: $green;
+					right: 50%;
+					transform: translateX(50%);
+					margin-top: -47px;
+					font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+					color: $cream;
+					text-align: center;
+					display: flex;
+					flex-direction: row;
+					pointer-events: none;
+					transition: opacity 0.5s;
+					opacity: 0;
+					&.showing { opacity:1; }
+
+					.text-side
+					{
+						font-size: 12px;
+						text-transform: uppercase;
+						letter-spacing: 0.5px;
+						border-right: 1px solid #4E725B;
+						line-height: 36px;
+						padding: 0 12px;
+					}
+
+					.timer-side
+					{
+						font-size: 16px;
+						small { font-size:11px; }
+						line-height: 35px;
+						flex: 1;
+					}
+
+					&.expired
+					{
+						background: #B92B27;
+						border-color: #A22522;
+						.text-side { border-color:#A22522; }
+					}
+				}
+
+				.free-shipping-line
+				{
+					text-align: center;
+					margin-bottom: 20px;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+
+					img
+					{
+						height: 100%;
+						width: auto;
+						margin-right: 10px;
+					}
+
+					span
+					{
+						font-size: 15px;
+						color: $dark;
+						line-height: 25px;
+						height: 25px;
+						font-weight: 500;
+						b { text-transform:uppercase; }
+					}
+				}
+			}
+		}
+
+		h1
+		{
+			font-size: 32px;
+			font-weight: 600;
+			letter-spacing: 3px;
+			text-align: center;
+			line-height: 44px;
+			text-transform: uppercase;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+
+		h2
+		{
+			margin: 0 0 60px;
+			font-size: 30px;
+			font-weight: 600;
+			text-align: center;
+			margin-top: 80px;
+			margin-bottom: 25px;
+			color: $dark;
+
+			@media screen and (max-width: $medium) { margin-top: 50px; }
+		}
+
+		.before-after-area
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 30px;
+
+			.before-after-cont
+			{
+				padding: 15px;
+				width: 300px;
+
+				.before-after {
+					height: 350px;
+					.before, .after { height: 350px; }
+				}
+
+				.legal
+				{
+					font-size: 11px;
+					text-align: right;
+					width: 100%;
+					position: absolute;
+					left: 0;
+					top: calc(100% + 5px);
+				}
+			}
+		}
+			
+		.before-after-text
+		{
+			color: $dark;
+			text-align: center;
+
+			blockquote
+			{
+				text-align: center;
+				font-size: 16px;
+				margin-bottom: 10px;
+			}
+	
+			.name
+			{
+				font-size: 20px;
+				font-weight: 600;
+				margin-right: 4px;
+			}
+	
+			.location
+			{
+				font-size: 14px;
+			}
+	
+			.statement
+			{
+				display: block;
+				font-size: 16px;
+				margin-top: 25px;
+				margin-bottom: 25px;
+				font-weight: 500;
+	
+				@media screen and (max-width: $medium) { margin-bottom:0px; }
+			}
+		}
+	}
+
+
+	@media screen and (max-width: $medium-large)
+	{
+		.main-column
+		{
+			.product-left
+			{
+				width: 40%;
+			}
+
+			.product-right
+			{
+				width: calc(60% - 100px);
+				padding-left: 100px;
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium)
+	{
+		padding-top: 25px;
+		margin-top: 0px;
+
+		.main-column
+		{
+			flex-direction: column-reverse;
+
+			.product-left
+			{
+				width: auto;
+			}
+
+			.product-right
+			{
+				color: $cream;
+				width: auto;
+				padding-left: 0;
+				h1 { font-weight:500; }
+				p strong { font-weight:500; }
+
+				.description
+				{
+					margin-bottom: 30px;
+				}
+
+				form
+				{
+					max-width: 610px;
+					margin-left: auto;
+					margin-right: auto;
+
+					.quantity-submit-line
+					{
+						button
+						{
+							font-size: 14px;
+							letter-spacing: 3px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

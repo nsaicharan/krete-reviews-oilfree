@@ -1,0 +1,36 @@
+
+.green-text-section,
+.blue-text-section
+{
+	background: $green;
+	&.blue-text-section { background:$dark; }
+	margin-top: 75px;
+
+	.main-column
+	{
+		text-align: center;
+		color: $cream;
+		padding: 100px 80px;
+		font-size: 40px;
+		font-weight: 500;
+		box-sizing: border-box;
+		line-height: 1.4em;
+
+		@media screen and (max-width: $medium)
+		{
+			font-size: 35px;
+			padding: 80px 60px;
+		}
+
+		@media screen and (max-width: $medium-small)
+		{
+			font-size: 30px;
+		}
+
+		@media screen and (max-width: $small)
+		{
+			font-size: 26px;
+			padding: 60px 40px;
+		}
+	}
+}

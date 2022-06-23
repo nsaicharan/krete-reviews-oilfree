@@ -1,0 +1,405 @@
+
+@use "sass:color";
+
+&.product-area
+{
+	.main-column
+	{
+		display: flex;
+		&.img-left { flex-direction: row-reverse; }
+		$stackBreakpoint: 810px; // between medium and medium-small
+		@media screen and (max-width: 1100px) { margin-left:40px; margin-right:40px; width:calc(100% - 80px); } // between medium and medium-large
+		@media screen and (max-width: $medium) { margin-left:20px; margin-right:20px; width:calc(100% - 40px); }
+		@media screen and (max-width: $stackBreakpoint) { flex-direction:column-reverse !important; } 
+
+		.col-info, .col-images
+		{
+			width: 50%;
+			box-sizing: border-box;
+
+			@media screen and (max-width: $stackBreakpoint) { width:100%; }
+		}
+
+		.col-info
+		{
+			background: white;
+			padding: 70px 70px;
+			@media screen and (max-width: $medium-large) { padding:65px 60px; }
+			@media screen and (max-width: $medium) { padding:40px 28px; }
+			@media screen and (max-width: $small) { padding:30px 25px; }
+
+			.stars
+			{
+				margin-bottom: 15px;
+			}
+
+			.title
+			{
+				display: block;
+				font-size: 30px;
+				line-height: 1.275;
+				font-weight: 600;
+				letter-spacing: 3px;
+				color: $dark;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+				@media screen and (max-width: $medium-large) { font-size:28px; }
+				@media screen and (max-width: $medium) { font-size:26px; }
+			}
+
+			.subtitle
+			{
+				width: 209px;
+				line-height: 1;
+				font-size: 17px;
+				font-weight: 600;
+				color: $dark;
+				margin-bottom: 15px;
+				@media screen and (max-width: $medium-large) { font-size:16px; }
+			}
+
+			.price-line
+			{
+				color: $dark;
+				margin-bottom: 18px;
+				display: flex;
+				align-items: center;
+
+				.price
+				{
+					font-size: 32px;
+					line-height: 1.375;
+					del { color: $green; }
+					margin: 0;
+					margin-right: 15px;
+					@media screen and (max-width: $medium-large) { font-size:30px; }
+					@media screen and (max-width: $medium) { font-size:28px; }
+
+					.sale-note
+					{
+						display: inline-block;
+						font-size: 12px;
+						color: $green;
+						border: 2px dashed $green;
+						line-height: 1.25em;
+						font-weight: bold;
+						padding: 4px 8px;
+						margin-left: 10px;
+						top: 1px;
+					}
+				}
+
+				.extra-link
+				{
+					flex: 1;
+
+					a
+					{
+						position: relative;
+						top: 1px;
+						font-size: 17px;
+						line-height: 1.6;
+						color: $dark;
+						font-weight: 600;
+						&::hover { color:$green; }
+						@media screen and (max-width: $medium-large) { font-size:16px; }
+					}
+				}
+			}
+
+			hr
+			{
+				border: 0;
+				outline: 0;
+				background: $dark;
+				height: 2px;
+			}
+
+			ul.selling-points
+			{
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+				margin-top: 27px;
+				margin-bottom: 28px;
+
+				li
+				{
+					line-height: 1.4;
+					font-size: 15px;
+					font-weight: bold;
+					margin: 10px 0;
+					padding-left: 40px;
+					@media screen and (max-width: $medium-large) { font-size:14px; }
+
+					&::before
+					{
+						content: '';
+						display: inline-block;
+						position: absolute;
+						left: 0;
+						top: 1px;
+						width: 23px;
+						height: 16px;
+						background: url(https://cdn.shopify.com/s/files/1/0338/0520/5563/t/4/assets/icon-check-simple.svg?v=8946494200424740983);
+						background-size: contain;
+					}
+				}
+			}
+
+			.description
+			{
+				padding: 0;
+				margin-top: -7px;
+				margin-bottom: 25px;
+
+				p
+				{
+					color: $dark;
+					font-size: 14px;
+					margin: 5px 0;
+				}
+			}
+
+			.variant-line
+			{
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); // works for 2 column layouts that stack after the given pixel size, default
+				grid-gap: 6px;
+				margin-bottom: 7px;
+
+				&.single-col
+				{
+					display: block;
+					width: 100%;
+				}
+
+				// can be added to do double column instead, just goes to single at $small
+				&.double-col
+				{
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+					@media screen and (max-width: $small) { grid-template-columns: 1fr; }
+				}
+
+				// can be added to do triple column instead, just goes to single at $small
+				&.triple-col
+				{
+					grid-template-columns: repeat(3, minmax(0, 1fr));
+					@media screen and (max-width: $small) { grid-template-columns: 1fr; }
+				}
+
+				.variant-button
+				{
+					box-sizing: border-box;
+					height: 54px;
+					border: 2px solid $green;
+					outline: 1px solid transparent;
+					display: none; // off until JS progressive enhancement
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					transition: outline-color 0.2s, border-color 0.2s, background 0.2s, color 0.2s;
+					cursor: pointer;
+					color: $green;
+					user-select: none;
+
+					&:not(.selected):hover
+					{
+						border-color: $greenhover;
+						background: color.adjust($greenhover, $alpha:-0.95);
+						color: $greenhover;
+					}
+
+					&.selected
+					{
+						color: $dark;
+						pointer-events: none;
+						border-color: $dark;
+						outline-color: $dark;
+						background-image: linear-gradient(105deg, #fff, color.adjust($dark, $alpha:-0.85));
+					}
+
+					p
+					{
+						margin: 2px 0;
+						line-height: 1em;
+						font-weight: 500;
+						font-size: 14px;
+						color: inherit;
+
+						&.title {
+							font-size: 16px;
+							font-weight: 700;
+							letter-spacing: 0px;
+							text-transform: none;
+						}
+					}
+
+					del
+					{
+						opacity: 0.75;
+						margin-right: 3px;
+					}
+
+					&.has-sale-callout { @media screen and (max-width: $small) { margin-top: 13px; } }
+					.sale-callout
+					{
+						color: $cream;
+						background: $green;
+						border: 3px solid #4E725B;
+						font-size: 12px;
+						font-weight: bold;
+						line-height: 1em;
+						padding: 3px 7px;
+						border-radius: 2px;
+						position: absolute;
+						top: -18px;
+						z-index: 1;
+						white-space: nowrap;
+						pointer-events: none;
+					}
+				}
+			}
+
+			.subscribe-teaser
+			{
+				padding: 15px 25px;
+				margin-top: 12px;
+				margin-bottom: 15px;
+				background: $green;
+				border-radius: 6px;
+				color: $cream;
+				font-size: 15px;
+				font-weight: 500;
+
+				ul { margin:0; padding:0; padding-left:20px; }
+				ul li
+				{
+					margin: 10px 0;
+				}
+
+				@media screen and (max-width: $medium-small) { font-size: 14px; }
+			}
+
+			.button
+			{
+				width: 100%;
+				background: $dark;
+				&:hover{ background:$darkhover; }
+				@media screen and (max-width: $medium-large) { font-size:14px; letter-spacing:4px; }
+				@media screen and (max-width: $medium) { letter-spacing:2px; }
+				@media screen and (max-width: $medium-small) { letter-spacing:3px; }
+
+				.line
+				{
+					width: 2px;
+					background: $cream;
+					height: 15px;
+					margin: 0 22px;
+					@media screen and (max-width: $medium) { margin: 0 18px; }
+				}
+			}
+
+			.no-form-button
+			{
+				text-align: center;
+				padding: 15px 25px;
+				display: block;
+				background: $dark;
+				color: $cream;
+				text-transform: uppercase;
+				font-weight: 500;
+				font-size: 18px;
+				letter-spacing: 2px;
+				cursor: pointer;
+				transition: background 0.2s;
+				&:hover { background: $darkhover; }
+
+				del { opacity:0.7; }
+				.pipe {  font-size:22px; opacity:0.6; top:2px; margin:0 5px; }
+
+				@media screen and (max-width: $small) { font-size:16px; }
+			}
+
+			.shipping-line
+			{
+				margin-top: 15px;
+				white-space: nowrap;
+				font-size: 16px;
+				margin-bottom: -5px;
+				@media screen and (max-width: $medium) { font-size:15px; }
+
+				&::before
+				{
+					content: '';
+					display: inline-block;
+					background: url(https://cdn.shopify.com/s/files/1/0338/0520/5563/t/4/assets/icon-truck-green.svg);
+					background-size: contain;
+					background-repeat: no-repeat;
+					width: 32px;
+					height: 30px;
+					margin-right: 10px;
+					position: relative;
+					top: 10px;
+				}
+			}
+		}
+
+		.col-images
+		{
+			align-self: stretch;
+			@media screen and (max-width: $stackBreakpoint) { height:110vw; }
+
+			.image-carousel
+			{
+				height: 100%;
+				width: 100%;
+				margin: 0;
+
+				.image-cont
+				{
+					height: 100%;
+					width: 100%;
+					position: relative;
+
+					.badge
+					{
+						left:-20px; top:-20px;
+						transform: none;
+
+						@media screen and (max-width: $stackBreakpoint) { left:unset; top:-15px; right:-15px; }
+					}
+
+					.image-frame
+					{
+						height: 100%;
+						width: 100%;
+						border: none;
+
+						.item
+						{
+							img
+							{
+								object-fit: cover;
+							}
+
+							&.center-left img
+							{
+								object-fit: scale-down;
+								object-position: left;
+							}
+						}
+					}
+
+					.arrow-prev { left:35px; }
+					.arrow-next { right:35px; }
+					.arrow { &::before,&::after { border-color:$cream; } }
+					@media screen and (max-width: $medium) {
+						.arrow-prev { left:15px; }
+						.arrow-next { right:15px; }
+					}
+				}
+			}
+		}
+	}
+}

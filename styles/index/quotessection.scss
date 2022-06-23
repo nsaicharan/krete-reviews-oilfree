@@ -1,0 +1,172 @@
+
+#quotes-section,                      // home page
+.presale-quotes-homestyle-maincol     // presale page
+{
+	padding: 100px 0;
+	@media screen and (max-width: $small) { padding: 75px 0; }
+	text-align: center;
+
+	.text-area
+	{
+		color: $cream;
+
+		h6
+		{
+			font-size: 17px;
+			line-height: 1.353;
+			font-weight: bold;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			margin: 0;
+			margin-bottom: 10px;
+
+			@media screen and (max-width: $medium-small) { font-size:16px; }
+			@media screen and (max-width: $small) { font-size:15px; }
+		}
+
+		h3
+		{
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 1.375;
+			margin: 0;
+
+			@media screen and (max-width: $medium-small) { font-size:36px; }
+			@media screen and (max-width: $small) { font-size:32px; }
+		}
+
+		.quotes
+		{
+			div.quote
+			{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				text-align: left;
+				font-size: 20px;
+				font-family: Georgia, serif;
+				font-style: italic;
+				margin-bottom: 5px;
+				margin-left: auto;
+				margin-right: auto;
+
+				height: 280px;
+				width: 550px;
+
+				.stars
+				{
+					text-align: center;
+				}
+
+				blockquote
+				{
+					padding: 0;
+					margin: 0;
+					position: relative;
+					line-height: 1.5em;
+
+					&::before, &::after
+					{
+						content: "“";
+						position: absolute;
+						color: $cream;
+						font-size: 260px;
+						font-family: Manrope;
+						font-style: normal;
+						line-height: 260px;
+						opacity: 0.2;
+					}
+
+					&::before
+					{
+						top: -28px;
+						left: -103px;
+					}
+
+					&::after
+					{
+						right: -102px;
+						bottom: 0px;
+						transform-origin: center;
+						transform: rotate(180deg);
+					}
+
+					footer
+					{
+						top: -5px;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+
+						cite
+						{
+							flex: 1;
+
+							img
+							{
+								border-radius: 99px;
+								width: auto;
+								height: 50px;
+								border: 3px solid $darkhover;
+								display: block;
+								margin: 0 auto;
+								margin-top: 8px;
+							}
+						}
+
+						.arrow-prev, .arrow-next
+						{
+							padding: 6px;
+							margin: 0 10px;
+							cursor: pointer;
+							transition: opacity 0.2s;
+							opacity: 0.6;
+							&:hover { opacity: 1; }
+
+							&::after
+							{
+								content: '';
+								border: 3px solid $cream;
+								border-right: none;
+								border-bottom: none;
+								width: 14px;
+								height: 14px;
+								transform-origin: center;
+								display: block;
+							}
+						}
+						.arrow-prev { transform: rotate(-45deg); margin-right: 20px; }
+						.arrow-next { transform: rotate(135deg); }
+
+						@media screen and (max-width: $medium-small)
+						{
+							.arrow-prev, .arrow-next
+							{
+								margin: 0 15px;
+							}
+
+							.arrow-prev { order:1; }
+							cite { order:2; }
+							.arrow-next { order:3; }
+						}
+					}
+				}
+
+				@media screen and (max-width: $medium) {
+					width:520px;
+					font-size: 19px;
+				}
+				@media screen and (max-width: $medium-small) {
+					text-align: center;
+					width: 410px;
+					font-size: 18px;
+					blockquote::before, blockquote::after { display: none; }
+				}
+				@media screen and (max-width: $small) {
+					width: 100%;
+					font-size: 17px;
+				}
+			}
+		}
+	}
+}

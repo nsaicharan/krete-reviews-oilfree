@@ -1,0 +1,272 @@
+
+.presale-page,
+.product-page-cont
+{
+	.info-section
+	{
+		background: $dark;
+
+		// anchor point for linking, raised so top isn't cut off from menu
+		#how-to-use
+		{
+			position: relative;
+			top: -100px;
+		}
+
+		.main-column
+		{
+			display: flex;
+			@media screen and (max-width: $medium) { flex-direction:column; }
+
+			.info-left
+			{
+				width: calc(50% - 100px);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.instructions-cont
+				{
+					padding: 15px;
+					margin: 50px 0;
+					background: white;
+
+					.slide-sizer
+					{
+						img
+						{
+							width: 100%;
+							max-width: 580px;
+							height: auto;
+							opacity: 0;
+							display: block;
+						}
+					}
+
+					.slides
+					{
+						height: 100%;
+						.slide
+						{
+							opacity: 0;
+							&.active { opacity:1; }
+							position: absolute;
+
+							img
+							{
+								width: 100%;
+								height: auto;
+								display: block;
+							}
+						}
+
+						.text
+						{
+							position: absolute;
+							top: 25px;
+							right: 25px;
+							color: $dark;
+							font-size: 19px;
+							font-weight: 600;
+							line-height: 1.4em;
+							text-align: right;
+
+							@media screen and (max-width: $medium-small)
+							{
+								font-size: 18px;
+							}
+
+							@media screen and (max-width: $small)
+							{
+								top: 20px;
+								right: 20px;
+							}
+						}
+					}
+				}
+
+				@media screen and (max-width: $medium-large)
+				{
+					width: calc(55% - 50px);
+				}
+
+				@media screen and (max-width: $medium)
+				{
+					width: auto;
+				}
+			}
+
+			.info-right
+			{
+				width: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: $cream;
+				padding-left: 100px;
+
+				.instructions
+				{
+					margin: 50px 0;
+
+					h2
+					{
+						font-size: 26px;
+						font-weight: 500;
+						margin-bottom: 40px;
+						line-height: 1.2em;
+					}
+
+					.logos
+					{
+						.logo
+						{
+							display: inline-block;
+							margin-right: 40px;
+							text-align: center;
+							vertical-align: top;
+							&:last-child { margin-right:0 !important; }
+
+							img
+							{
+								height: 40px;
+								width: auto;
+								margin-bottom: 10px;
+							}
+
+							h5
+							{
+								font-size: 13px;
+								font-weight: 700;
+								line-height: 1.2em;
+								margin-top: 0;
+								margin-bottom: 7px;
+								text-transform: uppercase;
+								letter-spacing: 2px;
+							}
+
+							p
+							{
+								font-size: 12px;
+								font-weight: 400;
+								line-height: 1.2em;
+								margin-top: 0;
+								margin-bottom: 20px;
+								letter-spacing: 1px;
+							}
+
+							@media screen and (max-width: $small)
+							{
+								img
+								{
+									height: 30px;
+								}
+
+								h5
+								{
+									font-size: 12px;
+								}
+
+								p
+								{
+									font-size: 11px;
+								}
+							}
+						}
+					}
+
+					h3
+					{
+						font-size: 20px;
+						fong-weight: 500;
+						margin-bottom: 10px;
+						line-height: 1.2em;
+					}
+
+					p
+					{
+						font-size: 16px;
+						font-weight: 400;
+						margin-bottom: 10px;
+						line-height: 1.4em;
+					}
+
+					hr
+					{
+						margin: 25px 0;
+						opacity: 0.7;
+					}
+
+					ul
+					{
+						padding-inline-start: 20px;
+
+						li
+						{
+							line-height: 1.4em;
+							margin-bottom: 17px;
+
+							b
+							{
+								text-transform: uppercase;
+							}
+						}
+					}
+
+					a
+					{
+						color: inherit;
+						text-decoration: underline;
+					}
+				}
+
+				@media screen and (max-width: $medium-large)
+				{
+					width: 45%;
+					padding-left: 50px;
+
+					.instructions
+					{
+						.logos
+						{
+							.logo
+							{
+								margin-right: 20px;
+							}
+						}
+					}
+				}
+
+				@media screen and (max-width: $medium)
+				{
+					width: auto;
+					padding-left: 0px;
+
+					.instructions
+					{
+						margin-top: 0;
+
+						h2, .logos
+						{
+							text-align: center;
+						}
+					}
+				}
+
+				@media screen and (max-width: $small)
+				{
+					.instructions
+					{
+						.logos
+						{
+							.logo
+							{
+								margin-right: 15px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

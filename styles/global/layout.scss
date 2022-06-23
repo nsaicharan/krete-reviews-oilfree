@@ -1,0 +1,84 @@
+
+/**
+	Holds general layout styles that can't be
+	logically put somewhere modularly.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+
+html, body
+{
+	height: 100%;
+	padding: 0 !important;
+	//overflow-x: hidden;
+}
+
+body
+{
+	#preview-bar-iframe { display:none; }
+
+	font-family: Manrope, sans-serif;
+	background: $cream;
+
+	// makes footer sticky
+	display: flex;
+	flex-direction: column;
+	footer#main-footer { flex: 0 0 auto; }
+	#non-footer-wrapper { flex: 1; }
+
+	*
+	{
+		position: relative;
+	}
+
+	.dark-section
+	{
+		background-color: $dark;
+	}
+
+	.main-column
+	{
+		width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+		
+		@media screen and (max-width: $medium-large)
+		{
+			margin-left: 60px;
+			margin-right: 60px;
+			width: calc(100% - 120px);
+		}
+
+		@media screen and (max-width: $medium)
+		{
+			margin-left: $medium-gutters;
+			margin-right: $medium-gutters;
+			width: calc(100% - #{$medium-gutters*2});
+		}
+
+		@media screen and (max-width: $medium-small)
+		{
+			margin-left: $small-gutters;
+			margin-right: $small-gutters;
+			width: calc(100% - #{$small-gutters*2});
+		}
+	}
+
+	a
+	{
+		outline: none;
+		text-decoration: none;
+	}
+}
+
+
+// ------------------ ANIMATIONS -------------------
+
+@keyframes spin-clockwise {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

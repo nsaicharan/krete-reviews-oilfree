@@ -1,0 +1,268 @@
+
+#mail-text-modal.variant-b
+{
+	.container
+	{
+		.subcont
+		{
+			// universal styles across steps
+			.step
+			{
+				text-align: center;
+
+				h2
+				{
+					font-size: 48px;
+					font-weight: 600;
+					letter-spacing: 2px;
+					line-height: 1.25em;
+					padding: 10px 0;
+					margin: 0;
+					margin-bottom: 5px;
+					@media screen and (max-width: $small) { font-size:30px; }
+				}
+
+				h3.discount-shower
+				{
+					background-color: #{$dark}33;
+					display: inline-block;
+					margin: 5px 0 15px;
+					padding: 30px 40px;
+					@media screen and (max-width: $medium-small) { padding: 20px 30px; }
+
+					// dashed border effect
+					background-image: linear-gradient(to right, $cream 50%, transparent 50%), linear-gradient(to right, $cream 50%, transparent 50%), linear-gradient(to bottom, $cream 50%, transparent 50%), linear-gradient(to bottom, $cream 50%, transparent 50%);
+					background-position: left top, left bottom, left top, right top;
+					background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+					background-size: 20px 3px, 20px 3px, 3px 20px, 3px 20px;
+				}
+
+				p
+				{
+					line-height: 1.5em;
+					letter-spacing: 1px;
+					font-size: 19px;
+					margin: 0 0 25px;
+					@media screen and (max-width: $small) { font-size:17px; }
+				}
+
+				p.sub-header
+				{
+					margin-top: -1px;
+					margin-bottom: 16px;
+					b { color:white; }
+				}
+			}
+
+			// styles for just the commit step
+			.commit-step
+			{
+				width: 600px;
+				max-width: 95vw;
+
+				h2 {
+					padding: 25px 0;
+				}
+
+				button
+				{
+					user-select: none;
+					font-size: 20px;
+					font-weight: 700;
+					background: $cream;
+					&:hover { background: $creamhover; }
+					color: $dark;
+					text-align: center;
+					display: block;
+					border: none !important;
+					outline: none !important;
+					transition: background 0.3s;
+					cursor: pointer;
+					padding: 30px 50px;
+					margin: 15px auto;
+					min-width: 360px;
+					@media screen and (max-width: $small) { min-width: 300px; }
+
+					&.subdued
+					{
+						background: #{$dark}66;
+						&:hover { background: $darkhover; }
+						font-size: 16px;
+						font-weight: 400;
+						color: #{$cream}CC;
+						padding: 20px 30px;
+					}
+				}
+
+				opacity: 1;
+				transition: opacity 300ms;
+				&.trans-out { opacity:0; } 
+			}
+
+			// styles just for email AND phone step
+			.email-step,
+			.phone-step
+			{
+				width: 600px;
+				max-width: 95vw;
+
+				transition: opacity 300ms;
+				&.trans-in, &.active { opacity:1 }
+				&.inactive, &.trans-out { opacity:0; }
+
+				form
+				{
+					margin: 15px 50px 0;
+					@media screen and (max-width: $medium-small) { margin: 15px 10px 0; }
+					@media screen and (max-width: $small) { margin: 15px 0 0; }
+
+					input
+					{
+						border-radius: 0;
+						display: block;
+						border: none !important;
+						outline: none !important;
+						box-shadow: none !important;
+						text-align: center;
+						line-height: 1em;
+						font-size: 16px;
+						padding: 18px 6px;
+						margin-bottom: 10px;
+						box-sizing: border-box;
+						width: 100%;
+
+						background: white;
+						transition: background 0.2s;
+						&.error { background:#FFDDDD; }
+					}
+
+					.country-flag
+					{
+						position: absolute;
+						margin-top: 16px;
+						margin-left: 16px;
+						width: 26px;
+						height: 26px;
+						border-radius: 999px;
+						overflow: hidden;
+						z-index: 1;
+
+						img
+						{
+							height: 100%;
+							width: auto;
+							opacity: 0;
+							transition: opacity 0.3s;
+						}
+					}
+
+					button
+					{
+						transition: background 0.2s;
+						background: $dark;
+						&:hover { background:$darkhover; }
+						width: 100%;
+						display: block;
+						padding: 25px 20px;
+						border: none !important;
+						outline: none !important;
+						box-shadow: none;
+						font-size: 18px;
+						font-weight: 500;
+						color: $cream;
+						letter-spacing: 2px;
+						cursor: pointer;
+						user-select: none;
+						margin-bottom: 17px;
+						transition: opacity 0.3s, background-color 0.2s;
+
+						&:disabled
+						{
+							cursor: default;
+							pointer-events: none;
+							opacity: 0.8;
+						}
+					}
+
+					p.errors
+					{
+						line-height: 14px;
+						font-size: 14px;
+						text-align: center;
+						color: white;
+						margin: 0;
+						padding: 0;
+						
+						height: 0px;
+						opacity: 0;
+						transition: height 0.3s, opacity 0.3s;
+
+						&.show
+						{
+							height: 28px;
+							opacity: 1;
+						}
+					}
+
+					p.legal
+					{
+						font-size: 12px;
+						color: #f5f4ec;
+						text-align: center;
+						font-weight: 400;
+						line-height: 1.3em;
+						opacity: 0.8;
+						letter-spacing: 1px;
+						margin: 10px 0;
+
+						@media screen and (max-width: $small) { font-size:11px; }
+
+						a
+						{
+							color: inherit;
+							text-decoration: underline;
+							font-size: inherit;
+						}
+					}
+				}
+			}
+
+			// styles just for the success step at the end
+			.success-step
+			{
+				width: 600px;
+				max-width: 95vw;
+
+				button
+				{
+					user-select: none;
+					font-size: 20px;
+					font-weight: 700;
+					background: $cream;
+					&:hover { background: $creamhover; }
+					color: $dark;
+					text-align: center;
+					display: block;
+					border: none !important;
+					outline: none !important;
+					transition: background 0.3s;
+					cursor: pointer;
+					padding: 30px 50px;
+					margin: 15px auto;
+					min-width: 360px;
+					@media screen and (max-width: $small) { min-width: 300px; }
+
+					&.subdued
+					{
+						background: #{$dark}66;
+						&:hover { background: $darkhover; }
+						font-size: 16px;
+						font-weight: 400;
+						color: #{$cream}CC;
+						padding: 20px 30px;
+					}
+				}
+			}
+		}
+	}
+}

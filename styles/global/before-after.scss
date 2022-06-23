@@ -1,0 +1,64 @@
+
+// see index.liquid for example of markup (root is .before-after-cont)
+
+.before-after-cont
+{
+	width: 100%; // control width via container
+
+	&.bordered
+	{
+		padding: $border-thickness;
+		background: white;
+		box-sizing: border-box;
+	}
+
+	.before-after
+	{
+		width: 100%;
+
+		// we need a default, but it is easily overridden in location where it's used
+		// all these must be reset for a change in height!
+		height: 500px;
+		.before, .after { height: 500px; }
+
+		.before,
+		.after
+		{
+			// remember to manually set a background for both of these!!!
+			background-size: cover;
+			background-position: center center;
+			width: 100%;
+			position: absolute;
+		}
+
+		.after-mask
+		{
+			width: 100%;
+			height: 0%;
+			overflow-y: hidden;
+		}
+
+		.line
+		{
+			width: 100%;
+			height: 4px;
+			background: white;
+			position: absolute;
+			bottom: 100%;
+		}
+	}
+
+	.trigger
+	{
+		position: absolute;
+		top: calc(50% - 200px);
+	}
+
+	@media screen and (max-width: $medium)
+	{
+		&.bordered
+		{
+			padding: $border-thickness2;
+		}
+	}
+}

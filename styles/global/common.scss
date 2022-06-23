@@ -1,0 +1,119 @@
+
+h1.common
+{
+	color: $dark;
+	font-size: 32px;
+	line-height: 1.2em;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	font-weight: 600;
+}
+
+.rich-text.common
+{
+	h2, h3, h4, h5, h6, p, ul, ol
+	{
+		color: $dark;
+		margin: 0;
+		margin-bottom: 25px;
+	}
+
+	p
+	{
+		font-size: 16px;
+		line-height: 1.4em;
+	}
+
+	ul li,
+	ol li
+	{
+		line-height: 1.4em;
+		margin: 5px 0;
+	}
+
+	a
+	{
+		color: $green;
+		text-decoration: underline;
+		transition: color 0.2s;
+		&:hover { color: $greenhover; }
+	}
+}
+
+.anchor.common
+{
+	position: relative;
+	top: -120px;
+}
+
+form.common
+{
+	margin-bottom: 50px;
+
+	.ssw-social-login-widget { display:none; }
+
+	label
+	{
+		display: inline-block;
+		font-size: 13px;
+		color: #{$dark}cc;
+		margin-bottom: 5px;
+	}
+
+	input[type=text],
+	input[type=email],
+	input[type=password],
+	textarea
+	{
+		padding: 8px 12px;
+		display: block;
+		margin-bottom: 10px;
+		transition: border-color 0.2s;
+		border: 1px solid #{$green}aa;
+		&:focus { border-color: $green; }
+		border-radius: 2px;
+		background: #ffffff77;
+		min-width: 250px;
+	}
+
+	.action_bottom
+	{
+		padding-top: 10px;
+
+		// attempts to target the "or" text between buttons
+		& > span
+		{
+			display: none;
+		}
+
+		button,
+		input[type=submit]
+		{
+			&:not(:first-child) { margin-left: 10px; }
+		}
+	}
+
+	// these are in action_bottom when there's multiple, otherwise not always
+	button,
+	input[type=submit]
+	{
+		padding: 15px 30px;
+		transition: background-color 0.2s;
+		background: $green;
+		&:hover { background: $greenhover; }
+		color: $cream;
+		font-size: 15px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		cursor: pointer;
+
+		@media screen and (max-width: $small)
+		{
+			width: 100%;
+			display: block;
+			margin-left: 0 !important;
+		}
+	}
+}

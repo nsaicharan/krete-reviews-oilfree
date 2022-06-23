@@ -1,0 +1,347 @@
+
+.presale-page
+{
+	section
+	{
+		padding: 50px 0;
+		color: $dark;
+		&.dark
+		{
+			background: $dark;
+			color: $cream;
+			padding: 100px 0;
+		}
+
+		// ------------ BASIC TYPOGRAPHY ---------------
+
+		h1
+		{
+			font-size: 44px;
+			font-weight: 600;
+			line-height: 1.2em;
+			letter-spacing: 1px;
+			margin: 0;
+			margin-bottom: 25px;
+		}
+
+		h2
+		{
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 1.2em;
+			letter-spacing: 1px;
+			margin: 0;
+			margin-bottom: 25px;
+
+			.number
+			{
+				display: block;
+				margin-right: 7px;
+				padding: 0 14px 3px 0px;
+				border-bottom: 2px solid;
+				margin-bottom: 5px;
+				border-color: #{$dark}22;
+			}
+
+			@media screen and (max-width: $medium) { font-size:30px; }
+		}
+
+		h3
+		{
+			font-size: 30px;
+			font-weight: 600;
+			line-height: 1.375;
+			margin: 0;
+			margin-bottom: 10px;
+
+			@media screen and (max-width: $medium) { font-size:22px; }
+		}
+
+		p
+		{
+			line-height: 1.5em;
+			font-size: 20px;
+			font-weight: 400;
+			margin: 0;
+			margin-bottom: 25px;
+
+			@media screen and (max-width: $medium) { font-size:18px; }
+		}
+
+		.fancy
+		{
+			font-size: 20px;
+			font-family: Georgia,serif;
+			font-style: italic;
+			line-height: 1.5em;
+
+			@media screen and (max-width: $medium) { font-size:18px; }
+		}
+
+		*.centered { text-align:center; }
+		*.last { margin-bottom:0; }
+		*.flex-centered {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		*.vertical-centered {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		// ---------- HEADERS -------------------
+
+		&.header1
+		{
+			padding: 40px 0;
+			background: $green;
+
+			.main-column
+			{
+				display: flex;
+				flex-direction: row;
+
+				.hero
+				{
+					z-index: 1;
+					margin-bottom: -80px;
+					text-align: center;
+					&.minus-60 { margin-bottom:-60px; }
+					&.minus-80 { margin-bottom:-80px; }
+					&.minus-100 { margin-bottom:-100px; }
+					&.minus-120 { margin-bottom:-120px; }
+					&.minus-140 { margin-bottom:-140px; }
+					&.minus-150 { margin-bottom:-150px; }
+					&.minus-160 { margin-bottom:-160px; }
+					&.minus-180 { margin-bottom:-180px; }
+					&.minus-200 { margin-bottom:-200px; }
+					&.minus-220 { margin-bottom:-220px; }
+					&.minus-240 { margin-bottom:-240px; }
+
+					img
+					{
+						background: gray;
+						border: 15px solid white;
+						box-shadow: 3px 3px 3px rgba(#000000, 0.05);
+						box-sizing: border-box;
+						width: 100%;
+						height: auto;
+					}
+
+					&.no-hang {
+						margin-bottom: 0px;
+					}
+				}
+
+				.content
+				{
+					color: $cream;
+					flex: 1;
+					font-weight: 40px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					text-align: center;
+
+					h1
+					{
+						letter-spacing: 0;
+						font-size: 40px;
+						margin: 0 50px;
+					}
+
+					.sub-h1
+					{
+						font-size: 24px;
+						margin: 4px 50px 0;
+						line-height: 1.5em;
+
+						.highlight {
+							background: rgba(255,255,255,0.3);
+							padding: 2px 5px;
+							margin-right: 2px;
+							font-weight: 600;
+						}
+					}
+
+					.button
+					{
+						margin-top: 25px;
+						align-self: center;
+					}
+
+					&.smaller
+					{
+						h1
+						{
+							font-size: 32px;
+						}
+						.sub-h1
+						{
+							font-size: 18px;
+						}
+						.button
+						{
+							margin-top: 25px;
+						}
+					}
+				}
+			}
+
+			@mixin mobile-overrides
+			{
+				padding: 22px 0 45px;
+
+				.main-column
+				{
+					flex-direction: column;
+
+					.hero
+					{
+						margin-bottom: 28px !important;
+					}
+				}
+
+				.content
+				{
+					h1 { margin:0 0 !important; font-size:30px; }
+					.sub-h1 { margin:4px 0 0 !important; font-size:20px; }
+					&.smaller
+					{
+						h1 { font-size:26px; }
+						.sub-h1 { font-size:16px; }
+					}
+				}
+			}
+
+			&.break-medium-small {
+				@media screen and (max-width: $medium-small) { @include mobile-overrides; }
+			}
+
+			&.break-medium-small-plus {
+				@media screen and (max-width: $medium-small-plus) { @include mobile-overrides; }
+			}
+
+			&.break-medium {
+				@media screen and (max-width: $medium) { @include mobile-overrides; }
+			}
+		}
+
+		@import 'presale/header2.scss';
+		@import 'presale/header3.scss';
+
+		// ---------- OTHER ELEMENTS --------------
+
+		@import 'presale/checksline.scss';
+		@import 'presale/iconshomestyle.scss';
+		@import 'presale/comparetable.scss';
+		@import 'presale/quoteshomestyle.scss';
+		@import 'presale/productsection.scss';
+		@import 'presale/ingredientsforareason.scss';
+		@import 'presale/beforeafterdouble.scss';
+		@import 'presale/surveystats.scss';	
+		@import 'presale/simplegraph.scss';
+		@import 'presale/versus.scss';
+		@import 'presale/howitworks.scss';	
+
+		&.simple-title
+		{
+			padding: 0;
+			
+			h2
+			{
+				font-size: 40px;
+				line-height: 55px;
+				font-weight: 600;
+				margin-bottom: 10px;
+				@media screen and (max-width: $medium-large) {
+					font-size: 35px;
+					line-height: 48px;
+				}
+				@media screen and (max-width: $medium) {
+					font-size: 30px;
+					line-height: 41px;
+				}
+			}
+
+			p
+			{
+				font-size: 20px;
+				line-height: 30px;
+				margin-bottom: 0;
+				@media screen and (max-width: $medium-large) {
+					font-size: 19px;
+					line-height: 28px;
+				}
+				@media screen and (max-width: $medium) {
+					font-size: 17px;
+					line-height: 27px;
+				}
+			}
+		}
+
+		// ---------- IMAGE ELEMENTS --------------
+
+		div.round-image
+		{
+			text-align: center;
+			margin-bottom: 40px;
+			img { border-radius: 999px; }
+		}
+
+		div.framed-image
+		{
+			text-align: center;
+
+			img {
+				width: 100%;
+				height: auto;
+				border: 15px solid #fff;
+				box-sizing: border-box;
+			}
+		}
+		&.dark div.framed-image img { border-width:15px; }
+
+		// ----------- LAYOUT ELEMENTS -------------
+
+		.columns
+		{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			&.reverse { flex-direction: row-reverse; }
+			&:not(.reverse) div[class^="column"]:first-child { margin-left:0; }
+			&.reverse div[class^="column"]:last-child { margin-left:0; }
+
+			.column-60
+			{
+				width: 56%;
+				margin-left: 8%;
+			}
+			.column-50
+			{
+				width: 46%;
+				margin-left: 8%;
+			}
+			.column-40
+			{
+				width: 36%;
+				margin-left: 8%;
+			}
+			@media screen and (max-width: $medium-small)
+			{
+				flex-direction: column;
+				.column-60,
+				.column-50,
+				.column-40 {
+					margin: 0;
+					width: 100%;
+					&:first-child { margin-bottom:25px; }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,72 @@
+
+.faq-page
+{
+	.main-column
+	{
+		& > h2
+		{
+			margin: 0;
+			padding: 25px 0;
+			font-size: 27px;
+			font-weight: 700;
+		}
+
+		& > hr
+		{
+			margin: 0;
+		}
+
+		ul.faq-list
+		{
+			margin-top: 5px;
+			list-style-type: none;
+			padding-left: 0px;
+
+			li
+			{
+				h2
+				{
+					user-select: none;
+					cursor: pointer;
+					margin: 0;
+					padding: 25px 0 25px 25px;
+					font-size: 24px;
+
+					&::before
+					{
+						content: '\203A';
+						margin-right: 15px;
+						transition: transform 0.3s;
+						transform: rotate(0deg);
+						display: inline-block;
+						position: absolute;
+						left: 0;
+					}
+				}
+
+				p
+				{
+					margin: 0;
+					padding: 0 0 10px 0;
+				}
+
+				a
+				{
+					color: $green;
+					text-decoration: underline;
+				}
+			}
+
+			li.open
+			{
+				h2
+				{
+					&::before
+					{
+						transform: rotate(90deg);
+					}
+				}
+			}
+		}
+	}
+}

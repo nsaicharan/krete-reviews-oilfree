@@ -1,0 +1,36 @@
+
+button
+{
+	.sold-out-tooltip
+	{
+		position: absolute;
+		padding: 6px 14px;
+		background: orangered;
+		letter-spacing: 2px;
+		color: white;
+		border-radius: 3px;
+		left: 50%;
+		transform: translateX(-50%);
+		top: calc(100% + 5px);
+		white-space: nowrap;
+		z-index: 1;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.2s;
+
+		&::before
+		{
+			content: "";
+			display: block;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 8px 9px 8px;
+			border-color: transparent transparent orangered transparent;
+			left: 50%;
+			transform: translateX(-50%);
+			top: -9px;
+		}
+	}
+}

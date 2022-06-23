@@ -1,0 +1,44 @@
+
+#account-menu
+{
+	background: $green;
+	border-radius: 6px;
+	overflow: hidden;
+	font-weight: 500;
+	font-size: 15px;
+	padding: 10px 0;
+	@media screen and (max-width: $medium) { padding:0; }
+
+	.pair
+	{
+		&:not(:last-child) { border-bottom: 1px solid rgba($cream,0.15); }
+
+		a
+		{
+			display: block;
+			padding: 15px 20px;
+			color: $cream;
+			background: $green;
+			&:hover { background:rgba(255,255,255,0.1); }
+			transition: background 0.2s;
+			&:not(:last-child) { border-bottom: 1px solid rgba($cream,0.15); }
+		}
+
+		@media screen and (max-width: $medium)
+		{
+			display: flex;
+			flex-direction: row;
+			border-bottom: none !important;
+			&:not(:first-child) { border-top:1px solid rgba($cream,0.15); }
+
+			a {
+				flex: 0.5;
+				text-align: center;
+				border-bottom: none !important;
+				&:first-child { border-right:1px solid rgba($cream,0.15); }
+
+				&.only { flex:1; border:none; }
+			}
+		}
+	}
+}

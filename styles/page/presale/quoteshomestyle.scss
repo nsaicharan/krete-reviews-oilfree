@@ -1,0 +1,21 @@
+
+&.quotes-homestyle
+{
+	padding: 0;
+	background: $dark;
+
+	.main-column
+	{
+		padding-bottom: 80px;
+		@media screen and (max-width: $small) { padding: 75px 0 60px; }
+
+		&.less-padding
+		{
+			padding-bottom: 60px;
+			padding-top: 60px;
+			@media screen and (max-width: $small) { padding: 55px 0 40px; }
+		}
+	}
+
+	// most styles held in styles/index/quotessection.scss
+}

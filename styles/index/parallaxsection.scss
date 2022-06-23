@@ -1,0 +1,161 @@
+
+.parallax-section
+{
+	margin-bottom: 50px;
+
+	.background
+	{
+		width: 100%;
+		height: 700px;
+		background-repeat: no-repeat;
+		background-color: #6F757B;
+		background-position: center;
+		background-image: url('plx-bg.jpg');
+		box-shadow: inset 0 -15px 15px -15px rgba(0,0,0,0.4); // inset bottom only
+
+		@media screen and (max-width: $medium-large)
+		{
+			background-image: url('plx-bg-0.75x.jpg');
+		}
+
+		@media screen and (max-width: $medium)
+		{
+			background-image: url('plx-bg-0.5x.jpg?latest2');
+			height: 600px;
+		}
+
+		@media screen and (max-width: $small)
+		{
+			height: 500px;
+		}
+	}
+
+	.scene
+	{
+		top: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.objects
+		{
+			position: relative;
+			width: 100%;
+			pointer-events: none;
+			overflow: hidden;
+			height: 1200px; // must be taller than image so we can hide image width without cutting its height
+			top: 200px; // starting pos for animation
+
+			// deprecated when we went to CSS background driven image showing
+			img
+			{
+				position: absolute;
+				bottom: 50%;
+				right: 50%;
+				transform: translate(50%, 50%) scale(0.5);
+				z-index: 1;
+				display: none;
+			}
+
+			.img
+			{
+				width: 2774px;
+				height: 1140px; // half size of full image so image shows at 2x
+				position: absolute;
+				bottom: 50%;
+				right: 50%;
+				transform: translate(50%, 50%);
+				z-index: 1;
+				background: url('plx-objects.png') no-repeat center center;
+				background-size: contain;
+
+				@media screen and (max-width: $medium)
+				{
+					background-image: url('plx-objects-0.75x.png');
+					width: 2080px;
+					height: 855px;
+				}
+
+				@media screen and (max-width: $small)
+				{
+					$url: unquote('plx-objects-0.5x.png?latest2');
+					background-image: url($url);
+					width: 665px;
+					height: 570px;
+					transform: translate(50%, 50%) scale(1.5);
+				}
+			}
+		}
+
+		.text
+		{
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 65%;
+			height: 100%;
+			color: $cream;
+			text-align: center;
+			z-index: 2;
+			top: 80px; // starting pos for animation
+
+			h2
+			{
+				line-height: 1.2em;
+				position: relative;
+				font-size: 60px;
+				font-weight: 600;
+				letter-spacing: 3px;
+				margin: 0 0 25px;
+				text-shadow: 0 0 20px rgba(0,0,0,0.8);
+				
+				transition: opacity 0.7s, top 0.7s;
+				top: 120px;
+				opacity: 0;
+				&.showing
+				{
+					opacity: 1;
+					top: 0px;
+				}
+			}
+
+			p
+			{
+				line-height: 1.8em;
+				font-size: 20px;
+				font-weight: 500;
+				letter-spacing: 1px;
+				margin: 0;
+				text-shadow: 0 0 20px rgba(0,0,0,0.8);
+
+				transition: opacity 1s, top 1s;
+				top: 180px;
+				opacity: 0;
+				//&.showing
+				//{
+					opacity: 1;
+					top: 0px;
+				//}
+			}
+
+			@media screen and (max-width: $medium)
+			{
+				width: 75%;
+				h2 { font-size: 45px; }
+				p { font-size: 18px; }
+			}
+
+			@media screen and (max-width: $small)
+			{
+				width: 85%;
+				h2 { font-size: 36px; }
+				p { font-size: 16px; }
+			}
+		}
+	}
+}

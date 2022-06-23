@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Generator: Adobe Fireworks 10, Export SVG Extension by Aaron Beall (http://fireworks.abeall.com) . Version: 0.6.1  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="Untitled-Page%201" viewBox="0 0 54 82" style="background-color:#ffffff00" version="1.1"
+	xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+	x="0px" y="0px" width="54px" height="82px"
+>
+	<defs>
+		<linearGradient id="gradient1" x1="59.6154%" y1="101.2658%" x2="17.2293%" y2="1.2658%">
+			<stop stop-color="#f5f4ec" stop-opacity="1" offset="0%"/>
+			<stop stop-color="#ace7ce" stop-opacity="1" offset="100%"/>
+		</linearGradient>
+	</defs>
+	<g id="Layer%201">
+		<path d="M 1 55.282 C 1 41.0783 27.0015 2 27.0015 2 C 27.0015 2 53 41.0783 53 55.282 C 53 69.4826 41.3587 81 27.0015 81 C 12.6413 81 1 69.4826 1 55.282 L 1 55.282 Z" fill="url(#gradient1)"/>
+		<path d="M 1.5 54.757 C 1.5 40.56 27.206 1.5 27.206 1.5 C 27.206 1.5 52.909 40.56 52.909 54.757 C 52.909 68.951 41.4 80.463 27.206 80.463 C 13.009 80.463 1.5 68.951 1.5 54.757 L 1.5 54.757 Z" stroke="#567d68" stroke-width="2" fill="none"/>
+	</g>
+</svg>

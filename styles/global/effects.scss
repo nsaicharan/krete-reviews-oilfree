@@ -1,0 +1,22 @@
+
+
+@keyframes animated-strike{
+	0%   { width : 0; }
+	100% { width: calc(100% + 4px); }
+}
+.animated-strike {
+	position: relative;
+}
+.animated-strike::after {
+	content: ' ';
+	position: absolute;
+	top: 50%;
+	left: -2px;
+	height: 2px;
+	background: $dark;
+	animation-name: animated-strike;
+	animation-duration: 0.7s;
+	//animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards; 
+}

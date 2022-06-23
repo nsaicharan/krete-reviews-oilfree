@@ -1,0 +1,2 @@
+$("#notrack-button").click((()=>{window.setNoTrack(!1),alert('A bit of data specific to this device/browser combo is now stored which will tell the Krete site to ignore you for all analytics. This is not permanent and may need to be redone in the future. The tab title will show "(notrack)" at the beginning for as long as this is active.')})),window["ga-disable-UA-186701400-1"]=!0,window["ga-disable-G-VC1305JWHT"]=!0,window.fbq=function(){};
+//# sourceMappingURL=notrack.js.map

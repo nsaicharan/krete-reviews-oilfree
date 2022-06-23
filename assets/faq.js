@@ -1,0 +1,2 @@
+(()=>{$(".faq-list li .answer").slideUp(0),$(".faq-list li h2").click((s=>{const e=$(s.currentTarget).parent(),n=e.hasClass("open");e.toggleClass("open"),n?e.find(".answer").slideUp(300):e.find(".answer").slideDown(300)}));const s=["track-your-order"],e=window.location.hash.substr(1),n=["track-your-order"].indexOf(e);n>-1&&console.log($(`#${s[n]}`).next().click())})();
+//# sourceMappingURL=faq.js.map

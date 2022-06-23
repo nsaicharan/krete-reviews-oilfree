@@ -1,0 +1,107 @@
+
+&.header2
+{
+	padding: 0;
+	background: #7BA285;
+
+	$centerline: -100px;
+
+	display: flex;
+	flex-direction: column;
+
+	.main-column
+	{
+		flex: 1;
+		display: flex;
+		align-items: center;
+
+		.content
+		{
+			z-index: 1;
+			box-sizing: border-box;
+			padding: 80px 0;
+			width: calc(50% + #{$centerline});
+
+			h1
+			{
+				font-size: 40px;
+				line-height: 55px;
+				font-weight: 600;
+				color: $cream;
+				margin-bottom: 10px;
+				
+				@media screen and (max-width: $medium-large) {
+					font-size: 35px;
+					line-height: 48px;
+				}
+				@media screen and (max-width: $medium) {
+					font-size: 30px;
+					line-height: 41px;
+				}
+			}
+
+			p
+			{
+				line-height: 30px;
+				margin: 10px 0;
+				font-size: 20px;
+				color: $cream;
+
+				@media screen and (max-width: $medium-large) {
+					font-size: 19px;
+					line-height: 28px;
+				}
+				@media screen and (max-width: $medium) {
+					font-size: 17px;
+					line-height: 27px;
+				}
+			}
+
+			.stars
+			{
+				margin: 25px 0;
+			}
+
+			a.button
+			{
+				margin: 10px 0;
+			}
+
+			@media screen and (max-width: $medium)
+			{
+				width: 100%;
+				right: 0;
+				padding: 70px 0;
+			}
+		}
+	}
+
+	.hero-image
+	{
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		&.right
+		{
+			background-position: left top;
+			width: calc(50% - #{$centerline});
+			
+			@media screen and (max-width: $medium) { display:none; }
+		}
+
+		&.right-mobile
+		{
+			background-position: center top;
+			position: relative;
+			width: 100%;
+			right: 0;
+			min-height: 290px;
+			display: none;
+			@media screen and (max-width: $medium) { display:block; }
+		}
+	}
+}

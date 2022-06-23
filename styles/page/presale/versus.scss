@@ -1,0 +1,214 @@
+&#versus,
+&#versus-one-image
+{
+	padding: 60px 0;
+
+	.main-column
+	{
+		.versus-content
+		{
+			display: flex;
+			align-items: center;
+
+			.point
+			{
+				flex: 1;
+				text-align: center;
+				align-self: stretch;
+				display: flex;
+				flex-direction: column;
+
+				h3 {
+					line-height: 1.5;
+					margin: 0 0 10px 0;
+					font-size: 40px;
+					font-weight: 600;
+				}
+
+				.sub {
+					line-height: 1.35;
+					margin: 10px 0 40px;
+					font-size: 17px;
+					font-weight: 600;
+					letter-spacing: 4px;
+					text-transform: uppercase;
+				}
+
+				.graphic
+				{
+					flex: 1;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+
+			.vs {
+				font-size: 40px;
+				font-weight: bold;
+			}
+		}
+	}
+
+	// -----------------------------------------------------------------
+
+	@media screen and (max-width: $medium-large)
+	{
+		.main-column
+		{
+			.versus-content
+			{
+				.point
+				{
+					h3 {
+						line-height: 1.45;
+						font-size: 35px;
+					}
+
+					.sub {
+						margin-top: 5px;
+						margin-bottom: 25px;
+						font-size: 16px;
+						letter-spacing: 3.5px;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium)
+	{
+		.main-column
+		{
+			.versus-content
+			{
+				flex-direction: column;
+				
+				.vs {
+					padding: 40px 0;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium-small)
+	{
+		padding: 50px 0;
+
+		.main-column
+		{
+			.versus-content
+			{
+				.point
+				{
+					h3 {
+						font-size: 30px;
+						line-height: 1.4;
+					}
+
+					.sub {
+						margin-top: 0;
+						margin-bottom: 16px;
+						font-size: 15px;
+						letter-spacing: 3px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// -------------------------------- ONE-IMAGE SPECIFIC ONLY BELOW ----------------------------
+
+
+&#versus-one-image
+{
+	.main-column
+	{
+		display: flex;
+		flex-direction: row-reverse;
+
+		.versus-content
+		{
+			flex: 1;
+			flex-direction: column;
+
+			.point
+			{
+				.sub {
+					margin-bottom: 0;
+				}
+			}
+
+			.vs {
+				color: $green;
+				padding: 30px 0;
+			}
+		}
+
+		.versus-image
+		{
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img {
+				max-width: 400px;
+				max-width: 500px;
+				width: auto;
+				height: auto;
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium)
+	{
+		.main-column
+		{
+			flex-direction: column;
+
+			.versus-content
+			{
+				margin-bottom: 40px;
+
+				.vs {
+					padding: 20px 0;
+				}
+			}
+
+			.versus-image
+			{
+				margin-right: 0px;
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium-small)
+	{
+		.main-column
+		{
+			.versus-image
+			{
+				img {
+					max-width: 400px;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $small)
+	{
+		.main-column
+		{
+			.versus-image
+			{
+				img {
+					max-width: 340px;
+				}
+			}
+		}
+	}
+}

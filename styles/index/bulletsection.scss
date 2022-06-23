@@ -1,0 +1,282 @@
+
+// now very poorly named since there's no more bullets in the bullet section...
+
+.bullet-section
+{
+	margin-top: 80px;
+	display: flex;
+
+	// universal for left and right side text areas
+	h2, aside
+	{
+		color: $dark;
+		opacity: 0.75;
+		line-height: 1.22em;
+		font-weight: 300;
+		margin: 0;
+		padding: 0;
+		white-space: pre;
+	}
+	h2 { font-size: 40px; }
+	aside { font-size: 27px; }
+
+	// for the purpose of laying out the whole 4 sided badge looking layout this makes it a lot easier
+
+	// largest view
+	$largeTopHeight: 60px;
+	$largeImgHeight: 400px;
+	$largeImgWidth:  320px;
+	$largeImgBorder: 30px;
+
+	/** ----------------- BRAND LINE --------------------------- */
+
+	.brand-line
+	{
+		position: absolute;
+		left: 50%;
+		top: $largeTopHeight + $largeImgBorder + $largeImgHeight/2;
+
+		.line
+		{
+			$size: 876px;
+			position: absolute;
+			width: $size;
+			max-width: 124vw; // should be 130 by the math, but I think vert scrollbar width affects it
+			height: 2px;
+			transform-origin: center;
+			top: 10px; // arbitrary offset chosen for aesthetics
+			transform: translateX(-50%) rotate(-40deg);
+			background: $green;
+
+			@media screen and (max-width: $medium-small) { top:0; }
+		}
+	}
+
+	/** ----------------- TOP AREA ----------------------------- */
+	
+	.top-cont
+	{
+		height: $largeTopHeight;
+
+		.top-stars
+		{
+			margin-top: 5px;
+			pointer-events: none;
+		}
+	}
+
+	/** ----------------- LEFT SIDE TEXT (LARGE) ----------------------- */
+
+	.left-cont
+	{
+		position: absolute;
+		right: calc(50% + 280px);
+		top: $largeTopHeight + ($largeImgHeight + $largeImgBorder*2)/2;
+		transform: translateY(-50%);
+	}
+
+	/** ----------------- RIGHT SIDE TEXT (LARGE) ----------------------- */
+
+	.right-cont
+	{
+		position: absolute;
+		left: calc(50% + 280px);
+		top: $largeTopHeight + ($largeImgHeight + $largeImgBorder*2)/2;
+		transform: translateY(-50%);
+	}
+
+	/** ----------------- LEFT SIDE TEXT (MEDIUM) ----------------------- */
+
+	@media screen and (max-width: $medium-large)
+	{
+		.left-cont
+		{
+			right: calc(50% + 256px);
+			top: $largeTopHeight - 18px;
+			transform-origin: 100% 50%;
+			transform: rotate(-90deg);
+		}
+	}
+
+	/** ----------------- RIGHT SIDE TEXT (MEDIUM) ----------------------- */
+
+	@media screen and (max-width: $medium-large)
+	{
+		.right-cont
+		{
+			text-align: right;
+			left: auto;
+			right: calc(50% - 270px);
+			top: auto;
+			bottom: calc(100% - #{$largeTopHeight + $largeImgHeight + $largeImgBorder*2 + 38px});
+			transform-origin: 100% 50%;
+			transform: rotate(90deg);
+		}
+	}
+
+	/** ----------------- LEFT SIDE TEXT (SMALL) ----------------------- */
+
+	@media screen and (max-width: $medium-small)
+	{
+		.left-cont
+		{
+			right: auto;
+			top: -15px;
+			transform: none;
+			position: relative;
+
+			h2
+			{
+				font-size: 22px;
+				text-align: center;
+				opacity: 1;
+				font-weight: 400;
+			}
+		}
+	}
+
+	/** ----------------- RIGHT SIDE TEXT (SMALL) ----------------------- */
+
+	@media screen and (max-width: $medium-small)
+	{
+		.right-cont
+		{
+			text-align: left;
+			left: auto;
+			right: auto;
+			top: auto;
+			bottom: auto;
+			transform: none;
+
+			left: calc(50% - 191px);
+			top: $largeTopHeight + 498px;
+
+			aside
+			{
+				font-size: 18px;
+				opacity: 1;
+			}
+		}
+	}
+
+	@media screen and (max-width: $small)
+	{
+		.right-cont
+		{
+			left: calc(50% - 160px);
+			top: $largeTopHeight + 428px;
+		}
+	}
+
+	/** ----------------- BEFORE/AFTER IMAGE AREA --------------- */
+
+	.before-after-area
+	{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 25px;
+		width: 100%;
+		flex-basis: 100%;
+
+		.before-after-cont
+		{
+			width: $largeImgWidth + $largeImgBorder*2;
+
+			.before-after
+			{
+				height: $largeImgHeight;
+				.before, .after { height: $largeImgHeight; }
+			}
+		}
+	}
+
+	@media screen and (max-width: $medium)
+	{
+		.before-after-area
+		{
+			.before-after-cont
+			{
+				.before-after
+				{
+					height: 420px;
+					.before, .after { height: 420px; }
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $small)
+	{
+		.before-after-area
+		{
+			.before-after-cont
+			{
+				max-width: 320px;
+				
+				.before-after
+				{
+					height: 350px;
+					.before, .after { height: 350px; }
+				}
+			}
+		}
+	}
+
+	/** ------------- BOTTOM TEXT ------------------------------------- */
+
+	.bottom-text
+	{
+		width: 380px;
+		@media screen and (max-width: $small) { width:320px; }
+		text-align: center;
+
+		.legal
+		{
+			font-weight: 500;
+			font-size: 12px;
+			position: absolute;
+			top: 10px;
+			right: 0px;
+			color: $green;
+			br { display:none; }
+
+			@media screen and (max-width: $medium-small)
+			{
+				top: 15px;
+			}
+
+			@media screen and (max-width: $small)
+			{
+				br { display:block; } // adds in the line break only on this width
+			}
+		}
+
+		.attribution
+		{
+			margin-top: 50px;
+
+			.name
+			{
+				font-size: 22px;
+				font-weight: 500;
+				color: $dark;
+				opacity: 0.8;
+			}
+
+			.location
+			{
+				margin-left: -2px;
+				font-size: 16px;
+				font-weight: 500;
+				color: $dark;
+				opacity: 0.8;
+			}
+
+			@media screen and (max-width: $medium-small)
+			{
+				margin-top: 80px;
+			}
+		}
+	}
+}

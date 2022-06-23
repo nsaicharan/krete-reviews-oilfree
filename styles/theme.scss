@@ -1,0 +1,60 @@
+
+// colors
+$lightcream: #fcfbf8;
+$cream: #f5f4ec;
+$green: #567d68;
+$dark: #0f343d;
+
+$whitehover: #EBE9D8;
+$creamhover: #E1DEC6;
+$greenhover: #416167;
+$darkhover: #39533E;
+
+
+
+
+// media query breakpoints
+$medium-large: 1320px;
+$medium: 1000px;
+$medium-small-plus: 875px;
+$medium-small: 750px;
+$small: 475px;
+
+// page margin sizes on medium and small screens (used elsewhere in scss to make sections go full width)
+$medium-gutters: 40px;
+$small-gutters: 20px; // actually switches at medium-small
+
+// other
+$border-thickness: 30px; // for the common thick white borders
+$border-thickness2: 20px; // for when it goes to $medium size or below
+
+// global imports
+@import 'global/normalize.scss';
+@import 'global/common.scss';
+@import 'global/scriptmodal.scss';
+@import 'global/scriptdiscountshower.scss';
+@import 'global/scriptmodalfriends11.scss'; // TEMP:
+@import 'global/growavestuff.scss';
+@import 'global/layout.scss';
+@import 'global/header.scss';
+@import 'global/footer.scss';
+@import 'global/components.scss';
+@import 'global/before-after.scss';
+@import 'global/effects.scss';
+@import 'global/bottomtrialpopin.scss';
+
+// folder root imports (further imports happen from this folder root file)
+@import 'page/page.scss';
+@import 'index/index.scss';
+@import 'product/product.scss';
+@import 'cart/cart.scss';
+@import 'about/about.scss';
+@import 'page/faq.scss';
+@import 'page/presale.scss';
+@import 'customers/customers.scss';
+
+// !!! TEMP !!!
+.temp-hide
+{
+	display: none !important;
+}

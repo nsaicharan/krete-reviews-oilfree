@@ -1,0 +1,303 @@
+
+// to give extra precendence to this section
+body
+{
+	.review-section
+	{
+		padding: 50px 0;
+
+		// this is a dumb element they use which they fuck up and it covers interactive elements sometimes
+		.ssw-clearfix
+		{
+			pointer-events: none;
+		}
+
+		// main title
+		.ssw-reviews-head { margin:0 !important; }
+		.ssw-reviews-head-title
+		{
+			line-height: 1.2em;
+			margin-bottom: 35px;
+			color: $dark;
+			text-transform: none;
+			font-size: 26px;
+			&::after { display: none; }
+		}
+
+		// links to left of the horizontal bar graphs for how many of each level of review (e.g. 5 stars 4 stars etc) at top
+		.ssw-review-filter a
+		{
+			color: $dark;
+		}
+
+		// the "5.0 out of 5" box
+		.ssw-stars-avg-bar
+		{
+			padding: 17px 0 17px;
+		}
+
+		// the stars that show at top for overall rating
+		.ssw-stars-avg
+		{
+			// full star shouldn't have a stroke to it :/
+			.ssw-icon-star path { stroke: none !important; }
+		}
+
+		// text below the "5.0 out of 5" box that says the total review count
+		.ssw-rate-count
+		{
+			color: $dark;
+			margin-top: 5px;
+			font-weight: 500;
+		}
+
+		// main "add a review" button and other large buttons
+		.btn.button
+		{
+			text-transform: capitalize;
+			letter-spacing: 2px;
+			color: $cream;
+			// bg is $green as set in growave settings (edit: that's now fucked somehow?? setting here)
+			background-color: $green;
+			transition: background-color 0.2s;
+			&:hover { background-color:$greenhover; }
+			cursor: pointer;
+		}
+
+		// container for the area writing a review
+		#ssw-review-simple-html
+		{
+			padding-bottom: 25px;
+
+			// text block for writing the review
+			// also targets the email/name inputs
+			.ssw-input-block-level
+			{
+				padding: 18px 20px;
+				border: 1px solid #ccc !important;
+
+				&:focus
+				{
+					outline: none;
+					border-color: #ddd !important;
+				}
+			}
+
+			// line with the post/cancel buttons
+			.ssw-control-group.ssw-text-right
+			{
+				display: flex;
+				flex-direction: row-reverse;
+
+				// the "or" between post and cancel buttons
+				.ssw-or
+				{
+					display: none;
+				}
+
+				.btn.button
+				{
+					// bg is $green as set in growave settings
+					transition: background-color 0.2s;
+					&:hover { background-color:$greenhover; }
+					cursor: pointer;
+				}
+
+				// the cancel button
+				.add_recommend
+				{
+					background: $cream;
+					padding: 14px 32px;
+					border: 1px solid $green;
+					color: $green;
+					transition: border-color 0.2s, color 0.2s;
+					&:hover { border-color:$greenhover; color:$greenhover; }
+					text-transform: capitalize;
+					margin-right: 10px;
+					@media screen and (max-width: $medium) {
+						padding: 14px 24px 13px;
+						font-size: 14px;
+					}
+				}
+			}
+
+			// hide the social login stuff that we don't want
+			.ssw-review-socialconnect.ssw-group1
+			{
+				display: none !important;
+			}
+			.ssw-simple-connect { margin-top:0; }
+
+			// show the hidden social connect and email/name text
+			.ssw-review-input-block.ssw-group1,
+			.ssw-review-input-block.ssw-group2
+			{
+				display: block !important;
+			}
+
+			// to give uniform margin
+			.ssw-control-group
+			{
+				margin-bottom: 20px;
+			}
+
+			// the button to add photos
+			.ssw-add-review-photos
+			{
+				background: $green;
+				color: $cream;
+				cursor: pointer;
+				padding: 9px 14px;
+				border-radius: 3px;
+
+				svg { display:none; }
+			}
+
+			// the container of all the added image previews when making the review
+			#recommed-images
+			{
+				margin: 0;
+
+				// individual image preview
+				.recommend-image-wrapper
+				{
+					margin: 0 0 0 10px;
+
+					// the X button
+					button
+					{
+						right: -3px;
+						top: -6px;
+					}
+				}
+			}
+
+			// legal text for opt-in at end of form
+			&:not(.hide-after)::after
+			{
+				display: block;
+				content: "By clicking “Post” you are agreeing to our Terms and Conditions and Privacy Policy. We’ll send you useful information, like tips and discounts!";
+				font-size: 12px;
+				color: #888;
+				text-align: right;
+				position: relative;
+				top: 5px;
+				line-height: 1.5em;
+			}
+			.legal
+			{
+				font-size: 12px;
+				color: #888;
+				text-align: right;
+				position: relative;
+				top: 5px;
+				line-height: 1.5em;
+				clear: both; // needed to avoid it covering fields above it
+				
+				a
+				{
+					color: inherit;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		// line that the sorting control is on
+		.ssw-reviews-sort-only
+		{
+			margin-top: 25px;
+			color: $dark;
+
+			// the span holding the currently selected sorting option
+			.ssw-reviews-sort-new-dropdown a
+			{
+				padding: 4px 8px;
+				border: 1px solid $green;
+				border-radius: 3px;
+				color: $green;
+			}
+		}
+
+		// container of an individual review
+		.ssw-item
+		{
+			// user thumb container and (inside) link
+			.ssw-user-thumb
+			{
+				@media screen and (max-width: $medium) { display: none; }
+				display: none; // ??
+
+				.ssw-thumb
+				{
+					cursor: default;
+					pointer-events: none;
+				}
+			}
+
+			// author name (maybe only link form? not sure, will have to check of non-link ones show up)
+			.ssw-recommend-author
+			{
+				color: $dark;
+				cursor: default;
+				font-size: 16px;
+				display: inline-block;
+				margin-bottom: 5px;
+			}
+
+			// container of the stars
+			.ssw-stars, .ssw-starsd
+			{
+				// full star shouldn't have a stroke to it :/
+				.ssw-icon-star path { stroke: none !important; }
+			}
+
+			// container of review text
+			.ssw-text
+			{
+				color: $dark;
+
+				// the ... dots for expanding
+				.ssw-popup-more-dots
+				{
+
+				}
+
+				// the expand/shrink links
+				.ssw-review-popup-more,
+				.ssw-review-popup-less
+				{
+					font-size: 14px;
+					color: $green;
+					transition: color 0.2s;
+					&:hover { color:$greenhover; }
+				}
+			}
+
+			// the checkmark on verified buyer
+			.ssw-review-sticker
+			{
+				display: inline-flex;
+				position: relative;
+				top: -2px;
+				left: 8px;
+			}
+		}
+	}
+
+	// the load more button
+	#ssw-recommends-loadmore
+	{
+		padding: 4px 12px;
+		border-radius: 3px;
+		color: $green;
+		border: 1px solid $green;
+		transition: color 0.2s, border-color 0.2s;
+		&:hover { color:$greenhover; border-color:$greenhover; }
+	}
+
+	// seems to be the best way to target the "powered by growave" element
+	#ssw-reviews-content > div:last-child
+	{
+		//display: none; // now that not on free the powered by isn't showing
+	}
+}

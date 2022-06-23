@@ -1,0 +1,220 @@
+
+&.header3
+{
+	padding: 0;
+	background: $green;
+
+	.main-column
+	{
+		background: radial-gradient(circle, rgba(103,146,122,1) 0%, rgba(86,125,104,1) 230px);
+		@media screen and (max-width: $medium-small) { background:$green; }
+
+		.centered
+		{
+			max-width: 1040px;
+			margin: 0 auto;
+			padding: 20px 0 45px;
+			display: flex;
+
+			.slideshow
+			{
+				.slide
+				{
+					display: inline-block;
+					border: 7px solid $cream;
+					position: absolute;
+					box-shadow: 2px 2px 10px rgba(black, 0.2);
+
+					img {
+						display: block;
+						width: 420px;
+						height: auto;
+					}
+
+					.text {
+						font-weight: 500;
+						font-size: 16px;
+						background: $green;
+						padding: 10px 14px;
+						color: $cream;
+						position: absolute;
+						top: 10px;
+						left: 10px;
+					}
+
+					//transition: opacity 0.3s;
+					&:not(.showing) {
+						pointer-events: none;
+						opacity: 0;
+					}
+
+					&.spacer {
+						position: relative;
+						pointer-events: none;
+						opacity: 0;
+					}
+				}
+
+				.legal {
+					position: absolute;
+					bottom: 14px;
+					left: 15px;
+					color: $cream;
+					font-size: 11px;
+					opacity: 0.9;
+				}
+			}
+
+			.content
+			{
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				margin-left: 110px;
+				text-align: left;
+				color: $cream;
+
+				h1
+				{
+					padding: 0;
+					margin: 0;
+					font-size: 38px;
+					line-height: 1.35;
+					margin-bottom: 6px;
+					font-weight: 500;
+					text-shadow: 2px 2px 4px rgba(black, 0.15);
+				}
+
+				.sub-h1
+				{
+					padding: 0;
+					margin: 0;
+					font-size: 25px;
+					line-height: 1.35;
+					margin-bottom: 22px;
+					font-weight: 500;
+					text-shadow: 2px 2px 3px rgba(black, 0.1);
+
+					.strike {
+						postion: relative;
+						color: #C6C599;
+						margin: 0 2px;
+						&::after {
+							content: '';
+							display: block;
+							position: absolute;
+							background: #C6C599;
+							width: 116%;
+							height: 8%;
+							left: -8%;
+							top: 48%;
+							transform: rotate(-12deg);
+						}
+					}
+
+					b { font-weight: 600; }
+				}
+
+				.cta-line
+				{
+					padding: 0;
+					margin: 0;
+					font-size: 15px;
+					text-transform: uppercase;
+					font-weight: 600;
+					letter-spacing: 3px;
+
+					a {
+						display: inline-block;
+						font-size: 13px;
+						color: $green;
+						background: $cream;
+						padding: 7px 16px 6px;
+						top: -1px;
+						margin-left: 5px;
+						cursor: pointer;
+						transition: background 0.2s;
+
+						&:hover { background:$creamhover; }
+					}
+				}
+			}
+
+			@media screen and (max-width: 1200px)
+			{
+				.slideshow
+				{
+					.slide
+					{
+						img { width: 380px; }
+					}
+				}
+
+				.content
+				{
+					margin-left: 80px;
+
+					h1 { font-size: 34px; }
+					.sub-h1 { font-size: 25px; }
+				}
+			}
+
+			@media screen and (max-width: $medium)
+			{
+				flex-direction: column;
+				align-items: center;
+
+				.slideshow
+				{
+					margin-bottom: 28px;
+				}
+
+				.content
+				{
+					margin-left: 0px;
+					text-align: center;
+				}
+			}
+
+			@media screen and (max-width: $medium-small)
+			{
+				.content
+				{
+					h1 { font-size: 30px; }
+					.sub-h1 { font-size: 23px; }
+					.cta-line { font-size: 14px; }
+				}
+			}
+
+			@media screen and (max-width: $small)
+			{
+				.slideshow
+				{
+					margin-bottom: 20px;
+
+					.slide
+					{
+						img { width: 100%; }
+
+						.text {
+							font-size: 14px;
+							padding: 8px 12px;
+						}
+					}
+				}
+
+				.content
+				{
+					h1 { font-size: 28px; }
+					.sub-h1 { font-size: 22px; }
+					.cta-line {
+						font-size: 13px;
+						letter-spacing: 2px;
+						a { font-size: 12px; }
+					}
+				}
+			}
+		}
+	}
+}
