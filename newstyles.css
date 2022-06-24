@@ -39,7 +39,7 @@
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url("./newassets/icon-star-green-alt.svg") no-repeat center;
+  background: url("./newassets/icon-star-lightgreen.svg") no-repeat center;
   background-size: contain;
   vertical-align: middle;
 }
@@ -120,6 +120,133 @@
   }
   #reviews-block .review-name {
     margin: 0 0 15px;
+  }
+}
+
+#oilfree-block {
+  margin-bottom: 20px;
+  padding: 60px 0;
+  background: #567d68;
+  color: #f5f4ec;
+  text-align: center;
+}
+#oilfree-block h2 {
+  margin: 0 0 5px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: normal;
+}
+#oilfree-block .subtitle {
+  margin: 0 0 40px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+#oilfree-block .cards-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#oilfree-block .card {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 565px;
+  max-width: 100%;
+  padding: 20px;
+  background: #f5f4ec;
+  color: #0f343d;
+}
+#oilfree-block .card-img {
+  margin-bottom: 30px;
+  max-width: 100%;
+  vertical-align: middle;
+}
+#oilfree-block .card-product {
+  margin: 0 0 5px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: normal;
+}
+#oilfree-block .card-price {
+  margin: 0 0 15px;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: normal;
+}
+#oilfree-block .card-benefits {
+  margin: 0 0 25px;
+  padding-left: 0;
+  list-style: none;
+  font-size: 20px;
+  line-height: 1.5;
+}
+#oilfree-block .vs {
+  margin: 0 10px;
+  padding-top: 21.9%;
+  font-size: 30px;
+}
+#oilfree-block .bottom-text {
+  margin: 40px 0 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: normal;
+}
+@media screen and (max-width: 1000px) {
+  #oilfree-block .card {
+    padding: 10px 10px 20px;
+  }
+}
+@media screen and (max-width: 750px) {
+  #oilfree-block {
+    padding: 50px 10px 52px;
+  }
+  #oilfree-block h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
+  }
+  #oilfree-block .subtitle {
+    margin: 0 0 30px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  #oilfree-block .cards-cont {
+    margin: 0 -30px;
+    padding: 10px;
+    background: #f5f4ec;
+  }
+  #oilfree-block .card {
+    padding: 0;
+  }
+  #oilfree-block .card-img {
+    margin-bottom: 20px;
+  }
+  #oilfree-block .card-product {
+    margin: 0 0 2px;
+    font-size: 30px;
+  }
+  #oilfree-block .card-price {
+    font-size: 20px;
+  }
+  #oilfree-block .card-benefits {
+    margin: 0 0 20px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  #oilfree-block .vs {
+    margin: 0 9px;
+    font-size: 20px;
+    color: #0f343d;
+  }
+  #oilfree-block .bottom-text {
+    margin: 30px 0 0;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 475px) {
+  #oilfree-block .vs {
+    padding-top: 19%;
   }
 }
 /*# sourceMappingURL=newstyles.css.map */

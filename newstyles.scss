@@ -65,7 +65,7 @@ $small: 475px;
 		display: inline-block;
 		width: 30px;
 		height: 30px;
-		background: url('./newassets/icon-star-green-alt.svg') no-repeat center;
+		background: url('./newassets/icon-star-lightgreen.svg') no-repeat center;
 		background-size: contain;
 		vertical-align: middle;
 
@@ -183,6 +183,175 @@ $small: 475px;
 		.review-name
 		{
 			margin: 0 0 15px;
+		}
+	}
+}
+
+#oilfree-block
+{
+	margin-bottom: 20px;
+	padding: 60px 0;
+	background: $green;
+	color: $cream;
+	text-align: center;
+
+	h2 
+	{
+		margin: 0 0 5px;
+		font-size: 40px;
+		font-weight: 600;
+		line-height: normal;
+	}
+
+	.subtitle 
+	{
+		margin: 0 0 40px;
+		font-size: 20px;
+		line-height: 1.5;
+	}
+
+	.cards-cont 
+	{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.card 
+	{
+		box-sizing: border-box;
+		width: 565px;
+		max-width: 100%;
+		padding: 20px;
+		background: $cream;
+		color: $dark;
+	}
+
+	.card-img 
+	{
+		margin-bottom: 30px;
+		max-width: 100%;
+		vertical-align: middle;
+	}
+
+	.card-product
+	{
+		margin: 0 0 5px;
+		font-size: 40px;
+		font-weight: 600;
+		line-height: normal;
+	}
+
+	.card-price
+	{
+		margin: 0 0 15px;
+		font-size: 30px;
+		font-weight: 600;
+		line-height: normal;
+	}
+
+	.card-benefits
+	{
+		margin: 0 0 25px;
+		padding-left: 0;
+		list-style: none;
+		font-size: 20px;
+		line-height: 1.5;
+	}
+
+	.vs 
+	{
+		margin: 0 10px;
+		padding-top: 21.9%;
+		font-size: 30px;
+	}
+
+	.bottom-text 
+	{
+		margin: 40px 0 0;
+		font-size: 30px;
+		font-weight: 600;
+		line-height: normal;
+	}
+
+	@media screen and (max-width: $medium) 
+	{
+		.card
+		{
+			padding: 10px 10px 20px;
+		}
+	}
+
+	@media screen and (max-width: $medium-small) 
+	{
+		padding: 50px 10px 52px;
+
+		h2
+		{
+			margin: 0 0 10px;
+			font-size: 30px;
+		}
+
+		.subtitle 
+		{
+			margin: 0 0 30px;
+			font-size: 17px;
+			line-height: 1.6;
+		}
+
+		.cards-cont
+		{
+			margin: 0 -30px; // to make it full width
+			padding: 10px;
+			background: $cream;
+		}
+
+		.card 
+		{
+			padding: 0;
+		}
+
+		.card-img
+		{
+			margin-bottom: 20px;
+		}
+
+		.card-product
+		{
+			margin: 0 0 2px;
+			font-size: 30px;
+		}
+
+		.card-price
+		{
+			font-size: 20px;
+		}
+
+		.card-benefits
+		{
+			margin: 0 0 20px;
+			font-size: 17px;
+			line-height: 1.6;
+		}
+
+		.vs
+		{
+			margin: 0 9px;	
+			font-size: 20px;
+			color: $dark;
+		}
+
+		.bottom-text
+		{
+			margin: 30px 0 0;
+			font-size: 20px;
+		}
+	}
+
+	@media screen and (max-width: $small) 
+	{
+		.vs
+		{
+			padding-top: 19%;
 		}
 	}
 }
